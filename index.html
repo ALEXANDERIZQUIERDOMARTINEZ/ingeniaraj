@@ -41,24 +41,23 @@ html { scroll-behavior: smooth; }
 body { font-family: var(--body); color: var(--text); background: var(--charcoal); overflow-x: hidden; }
 
 /* NAV */
+/* CUSTOMIZED_BY_CURSOR: nav-white + logo + mobile-menu */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 64px;
+  height: 120px;
   padding: 0 2rem;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 1.5rem;
-  background: rgba(26,39,68,0.97);
+  background: rgba(255,255,255,0.96);
   backdrop-filter: blur(14px);
   border-bottom: 3px solid var(--red);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
 }
 /* Logo */
-.nav-brand { display: flex; flex-direction: column; justify-content: center; }
-.nav-logo { font-family: var(--heading); font-size: 1.35rem; font-weight: 700; color: var(--white); letter-spacing: 0.05em; line-height: 1.1; }
-.nav-logo span { color: var(--gold); }
-.nav-tagline { font-size: 0.6rem; color: var(--gray-mid); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 1px; }
+.nav-brand { display: flex; align-items: center; }
+.nav-logo-img { width: 120px; height: 120px; object-fit: contain; display: block; }
 /* Menu */
 .nav-menu {
   display: flex; align-items: center; justify-content: center;
@@ -66,11 +65,11 @@ nav {
 }
 .nav-menu a {
   font-family: var(--heading); font-size: 0.68rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: rgba(255,255,255,0.65);
+  text-transform: uppercase; color: rgba(26,39,68,0.78);
   text-decoration: none; padding: 0.45rem 0.7rem; border-radius: 2px;
   transition: color 0.2s, background 0.2s; white-space: nowrap; display: block;
 }
-.nav-menu a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+.nav-menu a:hover { color: var(--charcoal); background: rgba(27,58,138,0.08); }
 .nav-menu a.nav-cta {
   color: var(--white); background: var(--red);
   padding: 0.45rem 1rem; margin-left: 0.4rem;
@@ -81,19 +80,58 @@ nav {
 .social-link {
   display: flex; align-items: center; justify-content: center;
   width: 30px; height: 30px; border-radius: 3px;
-  color: rgba(255,255,255,0.55);
-  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(26,39,68,0.60);
+  border: 1px solid rgba(26,39,68,0.15);
   text-decoration: none;
   transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
-.social-link:hover { color: var(--white); border-color: var(--gold); background: rgba(200,149,42,0.12); }
+.social-link:hover { color: var(--charcoal); border-color: var(--gold); background: rgba(200,149,42,0.14); }
 .social-link svg { width: 15px; height: 15px; }
 /* Hamburger */
 .nav-hamburger {
   display: none; background: none; border: none; cursor: pointer;
-  padding: 0.4rem; color: var(--white); align-items: center; justify-content: center;
+  padding: 0.4rem; color: var(--charcoal); align-items: center; justify-content: center;
 }
 .nav-hamburger svg { width: 22px; height: 22px; }
+
+/* Mobile menu (hamburger) */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.98);
+  border-bottom: 3px solid var(--red);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+  transform: translateY(-6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.nav-mobile.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.nav-mobile ul { list-style: none; padding: 0.75rem 1rem 1rem; margin: 0; display: grid; gap: 0.35rem; }
+.nav-mobile a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.85rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: var(--heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  background: rgba(27,58,138,0.05);
+}
+.nav-mobile a:hover { background: rgba(27,58,138,0.10); }
+.nav-mobile a.nav-cta { background: var(--red); color: var(--white); }
+.nav-mobile a.nav-cta:hover { background: var(--red-dark); }
 
 /* HERO */
 .hero {
@@ -247,7 +285,7 @@ nav {
   width: 48px; height: 48px; margin-bottom: 1.5rem;
   display: flex; align-items: center; justify-content: center;
 }
-.service-icon svg { width: 100%; height: 100%; }
+.service-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .service-num {
   font-family: var(--heading); font-size: 0.65rem; letter-spacing: 0.2em;
   color: var(--red); text-transform: uppercase; margin-bottom: 0.75rem;
@@ -611,11 +649,12 @@ footer {
 .reveal-delay-4 { transition-delay: 0.4s; }
 
 @media (max-width: 768px) {
-  nav { grid-template-columns: auto auto; padding: 0 1rem; gap: 0; }
+  nav { height: 96px; grid-template-columns: auto auto; padding: 0 1rem; gap: 0; }
   .nav-menu { display: none; }
   .nav-social { display: none; }
   .nav-hamburger { display: flex; }
-  .nav-tagline { display: none; }
+  .nav-mobile { display: block; }
+  .nav-logo-img { width: 96px; height: 96px; }
   .hero-stats { gap: 1.5rem; }
   .services-grid { grid-template-columns: 1fr; }
   .service-card.featured { grid-column: span 1; }
@@ -641,8 +680,7 @@ footer {
 <nav>
   <!-- LOGO -->
   <div class="nav-brand">
-    <div class="nav-logo">INGENIAR <span>AJ</span></div>
-    <div class="nav-tagline">S.A.S. · Construcción Integral</div>
+    <img class="nav-logo-img" src="https://i.ibb.co/v4hhs5m4/logoingeniar.png" alt="INGENIAR AJ">
   </div>
 
   <!-- MENÚ CENTRO -->
@@ -670,9 +708,22 @@ footer {
     <a href="#" class="social-link" title="LinkedIn" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
     </a>
-    <button class="nav-hamburger" aria-label="Menú">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
+  </div>
+  <button class="nav-hamburger" aria-label="Menú" aria-controls="nav-mobile" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+
+  <!-- MENÚ MÓVIL -->
+  <div class="nav-mobile" id="nav-mobile">
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#aeroportuario">Aeroportuario</a></li>
+      <li><a href="#hvac">HVAC &amp; Frío</a></li>
+      <li><a href="#aguas">Tratamiento</a></li>
+      <li><a href="#rcm">RCM</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+    </ul>
   </div>
 </nav>
 
@@ -680,7 +731,7 @@ footer {
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-  <div class="hero-img" id="hero-img" style=""></div>
+  <div class="hero-img" id="hero-img" style="background-image:url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=2400&q=60');"></div>
   <div class="hero-content" style="">
     <div class="hero-badge">Portafolio de Servicios 2024</div>
     <h1 style="">INGENIAR<br><span style="">AJ</span></h1>
@@ -718,10 +769,7 @@ footer {
     <div class="service-card reveal">
       <div class="service-num">01 / Aeroportuario</div>
       <div class="service-icon">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M24 6L42 28H30V42H18V28H6L24 6Z" stroke="#C8952A" stroke-width="2" stroke-linejoin="round"></path>
-          <path d="M6 36H42" stroke="#1A4B8C" stroke-width="2"></path>
-        </svg>
+        <img src="https://via.placeholder.com/96x96.png?text=A1" alt="Icono servicio aeroportuario">
       </div>
       <h3>Mantenimiento Aeroportuario</h3>
       <p>Experiencia, acreditaciones y protocolos de seguridad operacional para intervenir infraestructura aeroportuaria en Colombia.</p>
@@ -737,11 +785,7 @@ footer {
     <div class="service-card reveal reveal-delay-1" style="">
       <div class="service-num" style="">02 / HVAC</div>
       <div class="service-icon">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="10" width="36" height="22" rx="2" stroke="#C8952A" stroke-width="2"></rect>
-          <path d="M16 32V38M32 32V38M10 38H38" stroke="#1A4B8C" stroke-width="2" stroke-linecap="round"></path>
-          <circle cx="24" cy="21" r="5" stroke="#C8952A" stroke-width="2"></circle>
-        </svg>
+        <img src="https://via.placeholder.com/96x96.png?text=A2" alt="Icono servicio HVAC">
       </div>
       <h3 style="">Sistemas de Aire Acondicionado</h3>
       <p style="">Distribuidores e instaladores de sistemas HVAC industriales, institucionales y residenciales. Marcas líderes del mercado.</p>
@@ -756,11 +800,7 @@ footer {
     <div class="service-card reveal reveal-delay-2" style="">
       <div class="service-num" style="">03 / Refrigeración</div>
       <div class="service-icon">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="6" width="28" height="36" rx="2" stroke="#C8952A" stroke-width="2"></rect>
-          <path d="M18 18H30M18 24H26" stroke="#1A4B8C" stroke-width="2" stroke-linecap="round"></path>
-          <circle cx="24" cy="34" r="3" stroke="#C8952A" stroke-width="2"></circle>
-        </svg>
+        <img src="https://via.placeholder.com/96x96.png?text=A3" alt="Icono servicio refrigeración">
       </div>
       <h3 style="">Cuartos Fríos Industriales</h3>
       <p style="">Diseño, fabricación e instalación de cuartos fríos cumpliendo normativa INVIMA para frigoríficos y empresas alimentarias.</p>
@@ -1085,6 +1125,33 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Mobile hamburger menu
+(() => {
+  const btn = document.querySelector('.nav-hamburger');
+  const menu = document.getElementById('nav-mobile');
+  if (!btn || !menu) return;
+
+  const close = () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  };
+  const toggle = () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
+  btn.addEventListener('click', (e) => { e.preventDefault(); toggle(); });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 768) close(); });
+  document.addEventListener('click', (e) => {
+    if (!menu.classList.contains('open')) return;
+    if (e.target === btn || btn.contains(e.target)) return;
+    if (e.target === menu || menu.contains(e.target)) return;
+    close();
+  });
+})();
 </script>
 
 
