@@ -218,10 +218,11 @@ nav {
   grid-column: span 2;
 }
 .service-icon {
-  width: 48px; height: 48px; margin-bottom: 1.5rem;
+  width: 96px; height: 96px; margin-bottom: 1.25rem;
   display: flex; align-items: center; justify-content: center;
 }
-.service-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.service-icon img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4px; }
+.service-card.featured .service-icon img { box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
 .service-num {
   font-family: var(--heading); font-size: 0.65rem; letter-spacing: 0.2em;
   color: var(--red); text-transform: uppercase; margin-bottom: 0.75rem;
@@ -682,7 +683,7 @@ footer {
     <div class="service-card reveal">
       <div class="service-num">01 / Aeroportuario</div>
       <div class="service-icon">
-        <img src="https://via.placeholder.com/96x96.png?text=A1" alt="Icono servicio aeroportuario">
+        <img src="https://i.ibb.co/hF0BV4TC/mantenimiento-aereoportuario2.jpg" alt="Mantenimiento Aeroportuario">
       </div>
       <h3>Mantenimiento Aeroportuario</h3>
       <p>Experiencia, acreditaciones y protocolos de seguridad operacional para intervenir infraestructura aeroportuaria en Colombia.</p>
@@ -698,7 +699,7 @@ footer {
     <div class="service-card reveal reveal-delay-1" style="">
       <div class="service-num" style="">02 / HVAC</div>
       <div class="service-icon">
-        <img src="https://via.placeholder.com/96x96.png?text=A2" alt="Icono servicio HVAC">
+        <img src="https://i.ibb.co/F4h81KxT/mantemientoaireindustriales.jpg" alt="Sistemas de Aire Acondicionado">
       </div>
       <h3 style="">Sistemas de Aire Acondicionado</h3>
       <p style="">Distribuidores e instaladores de sistemas HVAC industriales, institucionales y residenciales. Marcas líderes del mercado.</p>
@@ -713,7 +714,7 @@ footer {
     <div class="service-card reveal reveal-delay-2" style="">
       <div class="service-num" style="">03 / Refrigeración</div>
       <div class="service-icon">
-        <img src="https://via.placeholder.com/96x96.png?text=A3" alt="Icono servicio refrigeración">
+        <img src="https://i.ibb.co/jPdhYcHq/cuartofrio.jpg" alt="Cuartos Fríos Industriales">
       </div>
       <h3 style="">Cuartos Fríos Industriales</h3>
       <p style="">Diseño, fabricación e instalación de cuartos fríos cumpliendo normativa INVIMA para frigoríficos y empresas alimentarias.</p>
@@ -727,6 +728,9 @@ footer {
     </div>
     <div class="service-card featured reveal reveal-delay-3" style="">
       <div class="service-num" style="color: var(--gold-light);">04 &amp; 05 / Tratamiento de Aguas</div>
+      <div class="service-icon">
+        <img src="https://i.ibb.co/MD4K9FfN/agua.jpg" alt="PTAR y PTAP — Operación Técnica">
+      </div>
       <h3 style="">PTAR &amp; PTAP — Operación Técnica</h3>
       <p style="">Servicios especializados para plantas de tratamiento de aguas residuales y potables. Garantizamos continuidad operativa y cumplimiento ambiental.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem;">
