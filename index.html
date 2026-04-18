@@ -22,31 +22,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&amp;display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy: #0A1628;
-  --navy-mid: #112240;
-  --blue: #1A4B8C;
-  --blue-bright: #1E6FC0;
-  --gold: #C8952A;
+  --red:        #C0272D;
+  --red-dark:   #9B1B20;
+  --blue:       #1B3A8A;
+  --blue-light: #2554C7;
+  --gold:       #C8952A;
   --gold-light: #E8AF45;
-  --white: #F5F7FA;
-  --gray-light: #E8ECF2;
-  --gray-mid: #8A9AB5;
-  --text: #1C2B40;
+  --charcoal:   #1A2744;
+  --white:      #FFFFFF;
+  --gray-light: #F0F4F8;
+  --gray-mid:   #8A9AB5;
+  --text:       #2D3748;
   --heading: 'Oswald', sans-serif;
   --body: 'Source Sans 3', sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--body); color: var(--text); background: var(--navy); overflow-x: hidden; }
+body { font-family: var(--body); color: var(--text); background: var(--charcoal); overflow-x: hidden; }
 
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 1rem 2rem;
   display: flex; align-items: center; justify-content: space-between;
-  background: rgba(10,22,40,0.92);
+  background: rgba(26,39,68,0.96);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(200,149,42,0.2);
+  border-bottom: 3px solid var(--red);
 }
 .nav-logo { font-family: var(--heading); font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 0.05em; }
 .nav-logo span { color: var(--gold); }
@@ -58,25 +59,31 @@ nav {
   display: grid; place-items: center;
   position: relative;
   overflow: hidden;
-  background: var(--navy);
+  background: var(--charcoal);
 }
 .hero-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(26,75,140,0.35) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 80% at 10% 80%, rgba(200,149,42,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 90% 20%, rgba(30,111,192,0.18) 0%, transparent 55%);
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(27,58,138,0.4) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 80% at 10% 80%, rgba(192,39,45,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 90% 20%, rgba(200,149,42,0.10) 0%, transparent 55%);
 }
 .hero-grid {
   position: absolute; inset: 0;
-  background-image: linear-gradient(rgba(30,111,192,0.06) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(30,111,192,0.06) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(27,58,138,0.07) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(27,58,138,0.07) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 .hero-img {
   position: absolute; inset: 0;
   background-size: cover; background-position: center;
-  opacity: 0.12;
+  opacity: 0.10;
+}
+/* decorative bottom ribbon like brand image */
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
+  background: linear-gradient(90deg, var(--red) 0%, var(--red) 60%, var(--blue) 60%, var(--blue) 85%, var(--gold) 85%, var(--gold) 100%);
 }
 .hero-content {
   position: relative; z-index: 2;
@@ -88,7 +95,7 @@ nav {
   display: inline-block;
   font-family: var(--heading); font-size: 0.75rem; letter-spacing: 0.2em;
   color: var(--gold); text-transform: uppercase;
-  border: 1px solid rgba(200,149,42,0.4);
+  border: 1px solid rgba(200,149,42,0.45);
   padding: 0.4rem 1.2rem; border-radius: 2px;
   margin-bottom: 2rem;
   opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s forwards;
@@ -101,7 +108,7 @@ nav {
   margin-bottom: 0.5rem;
   opacity: 0; animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.35s forwards;
 }
-.hero h1 span { color: var(--gold); }
+.hero h1 span { color: var(--red); }
 .hero-sub {
   font-family: var(--heading); font-weight: 400;
   font-size: clamp(1.1rem, 2.5vw, 1.6rem);
@@ -112,7 +119,7 @@ nav {
 .hero-desc {
   max-width: 640px; margin: 0 auto 3rem;
   font-size: clamp(1rem, 1.3vw, 1.15rem);
-  color: rgba(245,247,250,0.65); line-height: 1.7;
+  color: rgba(255,255,255,0.65); line-height: 1.7;
   opacity: 0; animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.65s forwards;
 }
 .hero-stats {
@@ -137,20 +144,20 @@ nav {
   font-family: var(--heading); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--gray-mid); border: 1px solid rgba(138,154,181,0.25);
   padding: 0.35rem 0.9rem; border-radius: 2px;
-  transition: color 0.3s, border-color 0.3s;
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
 }
-.sector-tag:hover { color: var(--gold-light); border-color: rgba(200,149,42,0.5); }
+.sector-tag:hover { color: var(--white); border-color: var(--red); background: rgba(192,39,45,0.15); }
 .scroll-hint {
   position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
   opacity: 0; animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 1.2s forwards;
 }
-.scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold), transparent); }
+.scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--red), transparent); }
 .scroll-text { font-size: 0.65rem; color: var(--gray-mid); letter-spacing: 0.15em; text-transform: uppercase; }
 
 /* SERVICES SECTION */
 .services {
-  background: var(--navy-mid);
+  background: var(--white);
   padding: 7rem 2rem;
 }
 .section-header {
@@ -158,40 +165,40 @@ nav {
 }
 .section-label {
   font-family: var(--heading); font-size: 0.7rem; letter-spacing: 0.25em;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+  text-transform: uppercase; color: var(--red); margin-bottom: 1rem;
 }
 .section-title {
   font-family: var(--heading); font-weight: 700;
   font-size: clamp(2.2rem, 5vw, 3.8rem);
-  color: var(--white); line-height: 1.05; letter-spacing: -0.02em;
+  color: var(--charcoal); line-height: 1.05; letter-spacing: -0.02em;
   margin-bottom: 1.2rem;
 }
-.section-desc { font-size: 1.05rem; color: rgba(245,247,250,0.6); line-height: 1.7; }
+.section-desc { font-size: 1.05rem; color: #667080; line-height: 1.7; }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 2px;
   max-width: 1200px; margin: 0 auto;
-  background: rgba(255,255,255,0.06);
+  background: var(--gray-light);
 }
 .service-card {
-  background: rgba(255,255,255,0.04);
+  background: var(--white);
   padding: 2.5rem;
   position: relative; overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
 }
 .service-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--blue-bright));
+  background: linear-gradient(90deg, var(--red), var(--blue));
   transform: scaleX(0); transform-origin: left;
   transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
 }
-.service-card:hover { transform: translateY(-4px); }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(192,39,45,0.1); }
 .service-card:hover::before { transform: scaleX(1); }
 .service-card.featured {
-  background: var(--navy);
+  background: var(--blue);
   grid-column: span 2;
 }
 .service-icon {
@@ -201,43 +208,44 @@ nav {
 .service-icon svg { width: 100%; height: 100%; }
 .service-num {
   font-family: var(--heading); font-size: 0.65rem; letter-spacing: 0.2em;
-  color: var(--gold); text-transform: uppercase; margin-bottom: 0.75rem;
+  color: var(--red); text-transform: uppercase; margin-bottom: 0.75rem;
 }
 .service-card h3 {
   font-family: var(--heading); font-weight: 600;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
-  color: var(--white); line-height: 1.2; letter-spacing: -0.01em;
+  color: var(--charcoal); line-height: 1.2; letter-spacing: -0.01em;
   margin-bottom: 1rem;
 }
 .service-card.featured h3 { color: var(--white); }
-.service-card p { font-size: 0.92rem; color: rgba(245,247,250,0.6); line-height: 1.65; margin-bottom: 1.25rem; }
-.service-card.featured p { color: rgba(245,247,250,0.6); }
+.service-card p { font-size: 0.92rem; color: #667080; line-height: 1.65; margin-bottom: 1.25rem; }
+.service-card.featured p { color: rgba(255,255,255,0.65); }
 .service-list {
   list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
 }
 .service-list li {
-  font-size: 0.88rem; color: rgba(245,247,250,0.6);
+  font-size: 0.88rem; color: #667080;
   display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.4;
 }
-.service-card.featured .service-list li { color: rgba(245,247,250,0.55); }
+.service-card.featured .service-list li { color: rgba(255,255,255,0.6); }
 .service-list li::before {
   content: '';
-  width: 5px; height: 5px; background: var(--gold);
+  width: 5px; height: 5px; background: var(--red);
   border-radius: 50%; flex-shrink: 0; margin-top: 0.45rem;
 }
+.service-card.featured .service-list li::before { background: var(--gold); }
 .service-card.featured .service-num { color: var(--gold-light); }
 
 /* AIRPORT SECTION */
 .airport {
-  background: var(--navy-mid);
+  background: var(--blue);
   padding: 7rem 2rem;
   position: relative; overflow: hidden;
 }
 .airport-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 80% 50%, rgba(26,75,140,0.4) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 15% 30%, rgba(200,149,42,0.08) 0%, transparent 50%);
+    radial-gradient(ellipse 70% 50% at 80% 50%, rgba(37,84,199,0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 15% 30%, rgba(200,149,42,0.10) 0%, transparent 50%);
 }
 .airport-inner {
   position: relative; z-index: 1;
@@ -246,11 +254,11 @@ nav {
 }
 .airport-content .section-label { color: var(--gold-light); }
 .airport-content .section-title { color: var(--white); }
-.airport-content .section-desc { color: rgba(245,247,250,0.6); text-align: left; }
+.airport-content .section-desc { color: rgba(255,255,255,0.65); text-align: left; }
 .airport-content .section-header { text-align: left; margin: 0 0 2rem; }
 .airplan-badge {
   display: inline-flex; align-items: center; gap: 0.6rem;
-  background: rgba(200,149,42,0.12); border: 1px solid rgba(200,149,42,0.3);
+  background: rgba(200,149,42,0.12); border: 1px solid rgba(200,149,42,0.35);
   padding: 0.6rem 1.2rem; border-radius: 3px;
   font-size: 0.8rem; color: var(--gold-light); letter-spacing: 0.1em;
   font-family: var(--heading); text-transform: uppercase;
@@ -260,21 +268,19 @@ nav {
   display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
 }
 .airport-item {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
   padding: 1.1rem 1.25rem; border-radius: 3px;
-  font-size: 0.87rem; color: rgba(245,247,250,0.7);
+  font-size: 0.87rem; color: rgba(255,255,255,0.75);
   display: flex; align-items: center; gap: 0.6rem;
   transition: background 0.3s, border-color 0.3s;
 }
-.airport-item:hover { background: rgba(26,75,140,0.25); border-color: rgba(30,111,192,0.4); }
+.airport-item:hover { background: rgba(192,39,45,0.2); border-color: rgba(192,39,45,0.5); }
 .airport-item::before {
   content: ''; width: 6px; height: 6px;
   background: var(--gold); border-radius: 50%; flex-shrink: 0;
 }
-.airport-visual {
-  position: relative;
-}
+.airport-visual { position: relative; }
 .airport-img-wrap {
   position: relative;
   aspect-ratio: 4/3; border-radius: 4px; overflow: hidden;
@@ -284,17 +290,17 @@ nav {
 .airport-accent {
   position: absolute; bottom: -1.5rem; right: -1.5rem;
   width: 120px; height: 120px;
-  border: 2px solid rgba(200,149,42,0.3); border-radius: 50%;
+  border: 2px solid rgba(200,149,42,0.4); border-radius: 50%;
 }
 .airport-accent2 {
   position: absolute; top: -1rem; left: -1rem;
   width: 60px; height: 60px;
-  background: var(--gold); border-radius: 2px; opacity: 0.15;
+  background: var(--red); border-radius: 2px; opacity: 0.2;
 }
 
 /* HVAC & COLD ROOMS */
 .hvac-cold {
-  background: var(--navy);
+  background: var(--gray-light);
   padding: 7rem 2rem;
 }
 .hvac-cold-inner { max-width: 1200px; margin: 0 auto; }
@@ -303,75 +309,78 @@ nav {
 }
 .big-card {
   border-radius: 4px; overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 24px rgba(27,58,138,0.10), 0 1px 4px rgba(0,0,0,0.06);
 }
 .big-card-header {
-  background: var(--navy); padding: 2.5rem;
+  background: var(--blue); padding: 2.5rem;
   position: relative; overflow: hidden;
 }
 .big-card-header::after {
   content: '';
   position: absolute; top: -30px; right: -30px;
   width: 140px; height: 140px;
-  border: 2px solid rgba(200,149,42,0.15); border-radius: 50%;
+  border: 2px solid rgba(200,149,42,0.2); border-radius: 50%;
 }
-.big-card-header .section-label { margin-bottom: 0.5rem; }
+.big-card-header .section-label { color: var(--gold-light); margin-bottom: 0.5rem; }
 .big-card-header h3 {
   font-family: var(--heading); font-weight: 700;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   color: var(--white); letter-spacing: -0.01em; line-height: 1.1;
 }
-.big-card-body { background: rgba(255,255,255,0.04); padding: 2rem 2.5rem; }
-.big-card-body p { font-size: 0.93rem; color: rgba(245,247,250,0.6); line-height: 1.65; margin-bottom: 1.5rem; }
+.big-card-body { background: var(--white); padding: 2rem 2.5rem; }
+.big-card-body p { font-size: 0.93rem; color: #667080; line-height: 1.65; margin-bottom: 1.5rem; }
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
 .tag {
   font-family: var(--heading); font-size: 0.7rem; letter-spacing: 0.1em;
   text-transform: uppercase; padding: 0.35rem 0.8rem;
-  border: 1px solid rgba(200,149,42,0.3); color: var(--gold-light);
-  border-radius: 2px; background: rgba(200,149,42,0.06);
+  border: 1px solid rgba(27,58,138,0.2); color: var(--blue);
+  border-radius: 2px; background: rgba(27,58,138,0.05);
+  transition: background 0.2s, color 0.2s;
 }
+.tag:hover { background: var(--blue); color: var(--white); }
 .mini-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
 .mini-list li {
-  font-size: 0.88rem; color: rgba(245,247,250,0.6); display: flex; align-items: flex-start; gap: 0.6rem;
+  font-size: 0.88rem; color: #667080; display: flex; align-items: flex-start; gap: 0.6rem;
 }
 .mini-list li::before {
   content: ''; width: 5px; height: 5px;
-  background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 0.45rem;
+  background: var(--red); border-radius: 50%; flex-shrink: 0; margin-top: 0.45rem;
 }
 
 /* WATER TREATMENT */
 .water {
-  background: var(--navy);
+  background: var(--charcoal);
   padding: 7rem 2rem;
   position: relative; overflow: hidden;
 }
 .water-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 60% 70% at 20% 50%, rgba(30,111,192,0.15) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 85% 30%, rgba(26,75,140,0.2) 0%, transparent 55%);
-  background-image: radial-gradient(rgba(30,111,192,0.04) 1px, transparent 1px);
+    radial-gradient(ellipse 60% 70% at 20% 50%, rgba(27,58,138,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 85% 30%, rgba(192,39,45,0.12) 0%, transparent 55%);
+  background-image: radial-gradient(rgba(27,58,138,0.06) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 .water-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
 .water-inner .section-header { max-width: none; text-align: left; margin-bottom: 3rem; }
 .water-inner .section-title { color: var(--white); }
-.water-inner .section-desc { color: rgba(245,247,250,0.55); }
+.water-inner .section-label { color: var(--gold); }
+.water-inner .section-desc { color: rgba(255,255,255,0.55); }
 .water-tabs {
   display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
 }
 .water-tab-card {
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(30,111,192,0.2);
+  border: 1px solid rgba(27,58,138,0.3);
   border-radius: 4px; padding: 2.5rem;
   position: relative; overflow: hidden;
   transition: border-color 0.3s;
 }
-.water-tab-card:hover { border-color: rgba(200,149,42,0.4); }
+.water-tab-card:hover { border-color: rgba(192,39,45,0.5); }
 .water-tab-card::before {
   content: '';
   position: absolute; top: 0; left: 0; width: 4px; bottom: 0;
-  background: linear-gradient(to bottom, var(--blue-bright), var(--gold));
+  background: linear-gradient(to bottom, var(--blue-light), var(--red));
 }
 .water-tab-card h3 {
   font-family: var(--heading); font-weight: 600;
@@ -379,11 +388,12 @@ nav {
   color: var(--white); margin-bottom: 0.5rem; letter-spacing: -0.01em;
 }
 .water-tab-card .sub { font-size: 0.8rem; color: var(--gold-light); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; font-family: var(--heading); }
-.water-tab-card .service-list li { color: rgba(245,247,250,0.6); }
+.water-tab-card .service-list li { color: rgba(255,255,255,0.65); }
+.water-tab-card .service-list li::before { background: var(--gold); }
 
 /* RCM SECTION */
 .rcm {
-  background: var(--navy-mid);
+  background: var(--white);
   padding: 7rem 2rem;
 }
 .rcm-inner { max-width: 1200px; margin: 0 auto; }
@@ -396,31 +406,31 @@ nav {
 .rcm-pillar {
   display: flex; align-items: flex-start; gap: 1.2rem;
   padding: 1.25rem 1.5rem;
-  border: 1px solid rgba(255,255,255,0.08); border-radius: 3px;
+  border: 1px solid var(--gray-light); border-radius: 3px;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .rcm-pillar:hover {
-  border-color: rgba(200,149,42,0.3);
-  box-shadow: 0 4px 16px rgba(200,149,42,0.06);
+  border-color: var(--red);
+  box-shadow: 0 4px 16px rgba(192,39,45,0.08);
 }
 .pillar-dot {
   width: 36px; height: 36px; flex-shrink: 0;
-  background: rgba(200,149,42,0.12); border: 1px solid rgba(200,149,42,0.3); border-radius: 3px;
+  background: var(--blue); border-radius: 3px;
   display: flex; align-items: center; justify-content: center;
 }
-.pillar-dot span { font-family: var(--heading); font-size: 0.8rem; color: var(--gold); font-weight: 600; }
-.pillar-text h4 { font-family: var(--heading); font-size: 1rem; color: var(--white); margin-bottom: 0.2rem; font-weight: 600; letter-spacing: 0.02em; }
-.pillar-text p { font-size: 0.85rem; color: rgba(245,247,250,0.6); line-height: 1.5; }
+.pillar-dot span { font-family: var(--heading); font-size: 0.8rem; color: var(--white); font-weight: 600; }
+.pillar-text h4 { font-family: var(--heading); font-size: 1rem; color: var(--charcoal); margin-bottom: 0.2rem; font-weight: 600; letter-spacing: 0.02em; }
+.pillar-text p { font-size: 0.85rem; color: #778090; line-height: 1.5; }
 .rcm-right { display: flex; flex-direction: column; gap: 1.5rem; }
 .rcm-deliverable {
-  background: var(--navy); border-radius: 4px;
+  background: var(--blue); border-radius: 4px;
   padding: 2rem 2.5rem;
   position: relative; overflow: hidden;
 }
 .rcm-deliverable::before {
   content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--blue-bright));
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--gold));
 }
 .rcm-deliverable h4 {
   font-family: var(--heading); font-size: 1rem; color: var(--white);
@@ -428,27 +438,28 @@ nav {
 }
 .deliverable-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
 .del-item {
-  font-size: 0.85rem; color: rgba(245,247,250,0.6);
+  font-size: 0.85rem; color: rgba(255,255,255,0.7);
   display: flex; align-items: center; gap: 0.5rem;
 }
 .del-item::before { content: ''; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
 
 /* TEAM & TECH */
 .team-tech {
-  background: var(--navy-mid);
+  background: var(--blue);
   padding: 7rem 2rem;
   position: relative; overflow: hidden;
 }
 .team-tech-bg {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(26,75,140,0.2) 0%, transparent 60%);
+  background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(192,39,45,0.12) 0%, transparent 60%);
 }
 .team-tech-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
 .team-tech-inner .section-header .section-title { color: var(--white); }
+.team-tech-inner .section-label { color: var(--gold); }
 .two-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; }
 .panel {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
   border-radius: 4px; padding: 2.5rem;
 }
 .panel-title {
@@ -458,9 +469,9 @@ nav {
 .panel-sub { font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 2rem; font-family: var(--heading); }
 .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
 .role-item {
-  background: rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.06);
   border-radius: 3px; padding: 0.9rem 1rem;
-  font-size: 0.85rem; color: rgba(245,247,250,0.65);
+  font-size: 0.85rem; color: rgba(255,255,255,0.75);
   display: flex; align-items: center; gap: 0.5rem;
 }
 .role-item svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
@@ -468,17 +479,17 @@ nav {
 .tech-item {
   display: flex; align-items: center; gap: 1rem;
   padding: 0.85rem 1rem;
-  background: rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.04);
   border-radius: 3px; border-left: 3px solid transparent;
-  font-size: 0.88rem; color: rgba(245,247,250,0.65);
+  font-size: 0.88rem; color: rgba(255,255,255,0.7);
   transition: border-color 0.3s, background 0.3s;
 }
-.tech-item:hover { border-left-color: var(--gold); background: rgba(200,149,42,0.06); }
+.tech-item:hover { border-left-color: var(--gold); background: rgba(200,149,42,0.08); }
 .tech-num { font-family: var(--heading); font-size: 0.7rem; color: var(--gold); min-width: 1.5rem; }
 
 /* CTA */
 .cta-section {
-  background: var(--navy);
+  background: var(--red);
   padding: 8rem 2rem;
   text-align: center;
   position: relative; overflow: hidden;
@@ -487,10 +498,10 @@ nav {
   content: '';
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(26,75,140,0.25) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(155,27,32,0.5) 0%, transparent 65%);
   pointer-events: none;
 }
-.cta-section .section-label { color: var(--gold); margin-bottom: 1rem; }
+.cta-section .section-label { color: var(--gold-light); margin-bottom: 1rem; }
 .cta-title {
   font-family: var(--heading); font-weight: 700;
   font-size: clamp(2.5rem, 6vw, 5rem);
@@ -498,9 +509,9 @@ nav {
   max-width: 800px; margin: 0 auto 1.5rem;
   position: relative; z-index: 1;
 }
-.cta-title span { color: var(--gold); }
+.cta-title span { color: var(--gold-light); }
 .cta-desc {
-  font-size: 1.05rem; color: rgba(245,247,250,0.55);
+  font-size: 1.05rem; color: rgba(255,255,255,0.75);
   max-width: 500px; margin: 0 auto 3rem; line-height: 1.7;
   position: relative; z-index: 1;
 }
@@ -508,29 +519,29 @@ nav {
 .btn-primary {
   font-family: var(--heading); font-size: 0.85rem; letter-spacing: 0.1em;
   text-transform: uppercase; font-weight: 600;
-  background: var(--gold); color: var(--navy);
+  background: var(--white); color: var(--red);
   padding: 1rem 2.5rem; border: none; cursor: pointer;
   border-radius: 2px; text-decoration: none;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s, transform 0.2s, color 0.3s;
   display: inline-block;
 }
-.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-primary:hover { background: var(--gold); color: var(--white); transform: translateY(-2px); }
 .btn-outline {
   font-family: var(--heading); font-size: 0.85rem; letter-spacing: 0.1em;
   text-transform: uppercase; font-weight: 600;
   background: transparent; color: var(--white);
-  padding: 1rem 2.5rem; border: 1px solid rgba(245,247,250,0.25); cursor: pointer;
+  padding: 1rem 2.5rem; border: 2px solid rgba(255,255,255,0.5); cursor: pointer;
   border-radius: 2px; text-decoration: none;
-  transition: border-color 0.3s, color 0.3s;
+  transition: border-color 0.3s, background 0.3s;
   display: inline-block;
 }
-.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.12); }
 
 /* FOOTER */
 footer {
-  background: #060F1C;
+  background: var(--charcoal);
   padding: 3rem 2rem;
-  border-top: 1px solid rgba(200,149,42,0.15);
+  border-top: 4px solid var(--red);
 }
 .footer-inner {
   max-width: 1200px; margin: 0 auto;
@@ -765,7 +776,7 @@ footer {
         <div class="big-card-body">
           <p>Aliados estratégicos de constructoras de la Costa Norte Colombiana. Diseño, suministro e instalación certificada de sistemas para todos los sectores.</p>
           <div style="margin-bottom:1rem;">
-            <div style="font-size:0.8rem;color:rgba(245,247,250,0.5);text-transform:uppercase;letter-spacing:0.1em;font-family:var(--heading);margin-bottom:0.6rem;">Marcas Industriales</div>
+            <div style="font-size:0.8rem;color:#778090;text-transform:uppercase;letter-spacing:0.1em;font-family:var(--heading);margin-bottom:0.6rem;">Marcas Industriales</div>
             <div class="tag-cloud">
               <span class="tag">Carrier</span>
               <span class="tag">York</span>
@@ -774,7 +785,7 @@ footer {
               <span class="tag">Frigidaire</span>
             </div>
           </div>
-          <div style="font-size:0.8rem;color:rgba(245,247,250,0.5);text-transform:uppercase;letter-spacing:0.1em;font-family:var(--heading);margin-bottom:0.6rem;">Capacidades Residenciales</div>
+          <div style="font-size:0.8rem;color:#778090;text-transform:uppercase;letter-spacing:0.1em;font-family:var(--heading);margin-bottom:0.6rem;">Capacidades Residenciales</div>
           <div class="tag-cloud">
             <span class="tag">9.000 BTU</span>
             <span class="tag">12.000 BTU</span>
@@ -799,8 +810,8 @@ footer {
             <li style="">Cuartos de congelación y conservación</li>
             <li style="">Túneles de enfriamiento rápido</li>
           </ul>
-          <div style="margin-top: 1.5rem; padding: 1rem 1.25rem; background: rgba(200, 149, 42, 0.06); border-left: 3px solid var(--gold); border-radius: 2px;">
-            <p style="margin: 0px; font-size: 0.85rem; color: rgba(245,247,250,0.7);">Cumplimiento estricto de normativa <strong style="color:var(--gold-light);">INVIMA</strong> para industria alimentaria y farmacéutica.</p>
+          <div style="margin-top: 1.5rem; padding: 1rem 1.25rem; background: rgba(27,58,138,0.06); border-left: 3px solid var(--blue); border-radius: 2px;">
+            <p style="margin: 0px; font-size: 0.85rem; color: #556070;">Cumplimiento estricto de normativa <strong style="color:var(--blue);">INVIMA</strong> para industria alimentaria y farmacéutica.</p>
           </div>
         </div>
       </div>
@@ -861,7 +872,7 @@ footer {
     </div>
     <div class="rcm-layout" style="">
       <div class="rcm-left">
-        <p style="font-size:1rem;color:rgba(245,247,250,0.6);line-height:1.7;margin-bottom:2rem;">Nuestro modelo operativo RCM reduce costos operativos y aumenta la disponibilidad de equipos mediante un enfoque sistemático y basado en datos.</p>
+        <p style="font-size:1rem;color:#667080;line-height:1.7;margin-bottom:2rem;">Nuestro modelo operativo RCM reduce costos operativos y aumenta la disponibilidad de equipos mediante un enfoque sistemático y basado en datos.</p>
         <div class="rcm-pillar-list">
           <div class="rcm-pillar reveal">
             <div class="pillar-dot"><span>01</span></div>
@@ -894,18 +905,18 @@ footer {
           </div>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="reveal reveal-delay-2">
-          <div style="background: var(--navy); border-radius: 4px; padding: 2rem; text-align: center;">
+          <div style="background: var(--blue); border-radius: 4px; padding: 2rem; text-align: center;">
             <div style="font-family: var(--heading); font-size: 3rem; font-weight: 700; color: var(--gold); line-height: 1;">100%</div>
             <div style="font-size: 0.78rem; color: rgba(245, 247, 250, 0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; font-family: var(--heading);">Trazabilidad técnica</div>
           </div>
-          <div style="background: var(--navy); border-radius: 4px; padding: 2rem; text-align: center;">
+          <div style="background: var(--blue); border-radius: 4px; padding: 2rem; text-align: center;">
             <div style="font-family: var(--heading); font-size: 3rem; font-weight: 700; color: var(--gold); line-height: 1;">9</div>
             <div style="font-size: 0.78rem; color: rgba(245, 247, 250, 0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; font-family: var(--heading);">Años de experiencia</div>
           </div>
         </div>
-        <div style="background: rgba(200, 149, 42, 0.06); border: 1px solid rgba(200, 149, 42, 0.2); border-radius: 4px; padding: 1.75rem 2rem;" class="reveal reveal-delay-3">
-          <div style="font-family: var(--heading); font-size: 0.85rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.08em;">Laboratorio Propio</div>
-          <p style="font-size: 0.88rem; color: rgba(245,247,250,0.6); line-height: 1.6;">Evaluación de materiales, verificación de compatibilidad técnica, control de calidad en obra y ensayos de desempeño. Confiabilidad garantizada en cada intervención.</p>
+        <div style="background: rgba(192,39,45,0.05); border: 1px solid rgba(192,39,45,0.2); border-radius: 4px; padding: 1.75rem 2rem;" class="reveal reveal-delay-3">
+          <div style="font-family: var(--heading); font-size: 0.85rem; font-weight: 600; color: var(--red); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.08em;">Laboratorio Propio</div>
+          <p style="font-size: 0.88rem; color: #667080; line-height: 1.6;">Evaluación de materiales, verificación de compatibilidad técnica, control de calidad en obra y ensayos de desempeño. Confiabilidad garantizada en cada intervención.</p>
         </div>
       </div>
     </div>
