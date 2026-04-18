@@ -1,7 +1,1221 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Página</title>
-  </head>
-</html>
+
+<!DOCTYPE html><html lang="es"><head><meta name="description" content="View this page published on Leadpages">
+<meta property="og:title" content="INGENIAR AJ S.A.S. — Portafolio de Servicios">
+<meta property="og:description" content="View this page published on Leadpages">
+<meta property="og:image" content="https://new.leadpages.com/api/og/screenshot?slug=XPbwQMJFJn">
+<meta property="og:url" content="https://pages.lpcontent.net/alexander-izquierdo-martinez/XPbwQMJFJn">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Leadpages">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="INGENIAR AJ S.A.S. — Portafolio de Servicios">
+<meta name="twitter:description" content="View this page published on Leadpages">
+<meta name="twitter:image" content="https://new.leadpages.com/api/og/screenshot?slug=XPbwQMJFJn">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pages.lpcontent.net/alexander-izquierdo-martinez/XPbwQMJFJn">
+<title>INGENIAR AJ S.A.S. — Portafolio de Servicios</title><meta name="referrer" content="no-referrer">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A1628;
+  --navy-mid: #112240;
+  --blue: #1A4B8C;
+  --blue-bright: #1E6FC0;
+  --gold: #C8952A;
+  --gold-light: #E8AF45;
+  --white: #F5F7FA;
+  --gray-light: #E8ECF2;
+  --gray-mid: #8A9AB5;
+  --text: #1C2B40;
+  --heading: 'Oswald', sans-serif;
+  --body: 'Source Sans 3', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--body); color: var(--text); background: var(--navy); overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(10,22,40,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,149,42,0.2);
+}
+.nav-logo { font-family: var(--heading); font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 0.05em; }
+.nav-logo span { color: var(--gold); }
+.nav-tagline { font-size: 0.7rem; color: var(--gray-mid); letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid; place-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(26,75,140,0.35) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 80% at 10% 80%, rgba(200,149,42,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 90% 20%, rgba(30,111,192,0.18) 0%, transparent 55%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(30,111,192,0.06) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(30,111,192,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0.12;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  max-width: 1000px;
+}
+.hero-badge {
+  display: inline-block;
+  font-family: var(--heading); font-size: 0.75rem; letter-spacing: 0.2em;
+  color: var(--gold); text-transform: uppercase;
+  border: 1px solid rgba(200,149,42,0.4);
+  padding: 0.4rem 1.2rem; border-radius: 2px;
+  margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s forwards;
+}
+.hero h1 {
+  font-family: var(--heading); font-weight: 700;
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+  line-height: 1.0; letter-spacing: -0.01em;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  opacity: 0; animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.35s forwards;
+}
+.hero h1 span { color: var(--gold); }
+.hero-sub {
+  font-family: var(--heading); font-weight: 400;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  color: var(--gray-mid); letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
+}
+.hero-desc {
+  max-width: 640px; margin: 0 auto 3rem;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: rgba(245,247,250,0.65); line-height: 1.7;
+  opacity: 0; animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.65s forwards;
+}
+.hero-stats {
+  display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.8s forwards;
+}
+.stat { text-align: center; }
+.stat-number {
+  font-family: var(--heading); font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700; color: var(--gold); line-height: 1;
+}
+.stat-label {
+  font-size: 0.75rem; color: var(--gray-mid); text-transform: uppercase;
+  letter-spacing: 0.12em; margin-top: 0.3rem;
+}
+.hero-sectors {
+  display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;
+  margin-top: 3rem;
+  opacity: 0; animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.95s forwards;
+}
+.sector-tag {
+  font-family: var(--heading); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gray-mid); border: 1px solid rgba(138,154,181,0.25);
+  padding: 0.35rem 0.9rem; border-radius: 2px;
+  transition: color 0.3s, border-color 0.3s;
+}
+.sector-tag:hover { color: var(--gold-light); border-color: rgba(200,149,42,0.5); }
+.scroll-hint {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  opacity: 0; animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 1.2s forwards;
+}
+.scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold), transparent); }
+.scroll-text { font-size: 0.65rem; color: var(--gray-mid); letter-spacing: 0.15em; text-transform: uppercase; }
+
+/* SERVICES SECTION */
+.services {
+  background: var(--white);
+  padding: 7rem 2rem;
+}
+.section-header {
+  text-align: center; max-width: 700px; margin: 0 auto 5rem;
+}
+.section-label {
+  font-family: var(--heading); font-size: 0.7rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--heading); font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  color: var(--navy); line-height: 1.05; letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+.section-desc { font-size: 1.05rem; color: #556070; line-height: 1.7; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2px;
+  max-width: 1200px; margin: 0 auto;
+  background: var(--gray-light);
+}
+.service-card {
+  background: var(--white);
+  padding: 2.5rem;
+  position: relative; overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.service-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--blue-bright));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.service-card:hover { transform: translateY(-4px); }
+.service-card:hover::before { transform: scaleX(1); }
+.service-card.featured {
+  background: var(--navy);
+  grid-column: span 2;
+}
+.service-icon {
+  width: 48px; height: 48px; margin-bottom: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.service-icon svg { width: 100%; height: 100%; }
+.service-num {
+  font-family: var(--heading); font-size: 0.65rem; letter-spacing: 0.2em;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 0.75rem;
+}
+.service-card h3 {
+  font-family: var(--heading); font-weight: 600;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--navy); line-height: 1.2; letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+.service-card.featured h3 { color: var(--white); }
+.service-card p { font-size: 0.92rem; color: #667080; line-height: 1.65; margin-bottom: 1.25rem; }
+.service-card.featured p { color: rgba(245,247,250,0.6); }
+.service-list {
+  list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
+}
+.service-list li {
+  font-size: 0.88rem; color: #667080;
+  display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.4;
+}
+.service-card.featured .service-list li { color: rgba(245,247,250,0.55); }
+.service-list li::before {
+  content: '';
+  width: 5px; height: 5px; background: var(--gold);
+  border-radius: 50%; flex-shrink: 0; margin-top: 0.45rem;
+}
+.service-card.featured .service-num { color: var(--gold-light); }
+
+/* AIRPORT SECTION */
+.airport {
+  background: var(--navy-mid);
+  padding: 7rem 2rem;
+  position: relative; overflow: hidden;
+}
+.airport-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 80% 50%, rgba(26,75,140,0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 15% 30%, rgba(200,149,42,0.08) 0%, transparent 50%);
+}
+.airport-inner {
+  position: relative; z-index: 1;
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+}
+.airport-content .section-label { color: var(--gold-light); }
+.airport-content .section-title { color: var(--white); }
+.airport-content .section-desc { color: rgba(245,247,250,0.6); text-align: left; }
+.airport-content .section-header { text-align: left; margin: 0 0 2rem; }
+.airplan-badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: rgba(200,149,42,0.12); border: 1px solid rgba(200,149,42,0.3);
+  padding: 0.6rem 1.2rem; border-radius: 3px;
+  font-size: 0.8rem; color: var(--gold-light); letter-spacing: 0.1em;
+  font-family: var(--heading); text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.airport-services {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+}
+.airport-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 1.1rem 1.25rem; border-radius: 3px;
+  font-size: 0.87rem; color: rgba(245,247,250,0.7);
+  display: flex; align-items: center; gap: 0.6rem;
+  transition: background 0.3s, border-color 0.3s;
+}
+.airport-item:hover { background: rgba(26,75,140,0.25); border-color: rgba(30,111,192,0.4); }
+.airport-item::before {
+  content: ''; width: 6px; height: 6px;
+  background: var(--gold); border-radius: 50%; flex-shrink: 0;
+}
+.airport-visual {
+  position: relative;
+}
+.airport-img-wrap {
+  position: relative;
+  aspect-ratio: 4/3; border-radius: 4px; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3);
+}
+.airport-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.airport-accent {
+  position: absolute; bottom: -1.5rem; right: -1.5rem;
+  width: 120px; height: 120px;
+  border: 2px solid rgba(200,149,42,0.3); border-radius: 50%;
+}
+.airport-accent2 {
+  position: absolute; top: -1rem; left: -1rem;
+  width: 60px; height: 60px;
+  background: var(--gold); border-radius: 2px; opacity: 0.15;
+}
+
+/* HVAC & COLD ROOMS */
+.hvac-cold {
+  background: var(--white);
+  padding: 7rem 2rem;
+}
+.hvac-cold-inner { max-width: 1200px; margin: 0 auto; }
+.two-col-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem;
+}
+.big-card {
+  border-radius: 4px; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06);
+}
+.big-card-header {
+  background: var(--navy); padding: 2.5rem;
+  position: relative; overflow: hidden;
+}
+.big-card-header::after {
+  content: '';
+  position: absolute; top: -30px; right: -30px;
+  width: 140px; height: 140px;
+  border: 2px solid rgba(200,149,42,0.15); border-radius: 50%;
+}
+.big-card-header .section-label { margin-bottom: 0.5rem; }
+.big-card-header h3 {
+  font-family: var(--heading); font-weight: 700;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--white); letter-spacing: -0.01em; line-height: 1.1;
+}
+.big-card-body { background: var(--white); padding: 2rem 2.5rem; }
+.big-card-body p { font-size: 0.93rem; color: #667080; line-height: 1.65; margin-bottom: 1.5rem; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+.tag {
+  font-family: var(--heading); font-size: 0.7rem; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(26,75,140,0.2); color: var(--blue);
+  border-radius: 2px; background: rgba(26,75,140,0.04);
+}
+.mini-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+.mini-list li {
+  font-size: 0.88rem; color: #556070; display: flex; align-items: flex-start; gap: 0.6rem;
+}
+.mini-list li::before {
+  content: ''; width: 5px; height: 5px;
+  background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 0.45rem;
+}
+
+/* WATER TREATMENT */
+.water {
+  background: var(--navy);
+  padding: 7rem 2rem;
+  position: relative; overflow: hidden;
+}
+.water-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 20% 50%, rgba(30,111,192,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 85% 30%, rgba(26,75,140,0.2) 0%, transparent 55%);
+  background-image: radial-gradient(rgba(30,111,192,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.water-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.water-inner .section-header { max-width: none; text-align: left; margin-bottom: 3rem; }
+.water-inner .section-title { color: var(--white); }
+.water-inner .section-desc { color: rgba(245,247,250,0.55); }
+.water-tabs {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+}
+.water-tab-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(30,111,192,0.2);
+  border-radius: 4px; padding: 2.5rem;
+  position: relative; overflow: hidden;
+  transition: border-color 0.3s;
+}
+.water-tab-card:hover { border-color: rgba(200,149,42,0.4); }
+.water-tab-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; width: 4px; bottom: 0;
+  background: linear-gradient(to bottom, var(--blue-bright), var(--gold));
+}
+.water-tab-card h3 {
+  font-family: var(--heading); font-weight: 600;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--white); margin-bottom: 0.5rem; letter-spacing: -0.01em;
+}
+.water-tab-card .sub { font-size: 0.8rem; color: var(--gold-light); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; font-family: var(--heading); }
+.water-tab-card .service-list li { color: rgba(245,247,250,0.6); }
+
+/* RCM SECTION */
+.rcm {
+  background: var(--white);
+  padding: 7rem 2rem;
+}
+.rcm-inner { max-width: 1200px; margin: 0 auto; }
+.rcm-layout {
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start;
+  margin-top: 4rem;
+}
+.rcm-left .section-header { text-align: left; margin: 0 0 2rem; }
+.rcm-pillar-list { display: flex; flex-direction: column; gap: 1rem; }
+.rcm-pillar {
+  display: flex; align-items: flex-start; gap: 1.2rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--gray-light); border-radius: 3px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.rcm-pillar:hover {
+  border-color: rgba(200,149,42,0.3);
+  box-shadow: 0 4px 16px rgba(200,149,42,0.06);
+}
+.pillar-dot {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: var(--navy); border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+}
+.pillar-dot span { font-family: var(--heading); font-size: 0.8rem; color: var(--gold); font-weight: 600; }
+.pillar-text h4 { font-family: var(--heading); font-size: 1rem; color: var(--navy); margin-bottom: 0.2rem; font-weight: 600; letter-spacing: 0.02em; }
+.pillar-text p { font-size: 0.85rem; color: #778090; line-height: 1.5; }
+.rcm-right { display: flex; flex-direction: column; gap: 1.5rem; }
+.rcm-deliverable {
+  background: var(--navy); border-radius: 4px;
+  padding: 2rem 2.5rem;
+  position: relative; overflow: hidden;
+}
+.rcm-deliverable::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--blue-bright));
+}
+.rcm-deliverable h4 {
+  font-family: var(--heading); font-size: 1rem; color: var(--white);
+  margin-bottom: 1rem; letter-spacing: 0.05em; text-transform: uppercase;
+}
+.deliverable-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.del-item {
+  font-size: 0.85rem; color: rgba(245,247,250,0.6);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.del-item::before { content: ''; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+/* TEAM & TECH */
+.team-tech {
+  background: var(--navy-mid);
+  padding: 7rem 2rem;
+  position: relative; overflow: hidden;
+}
+.team-tech-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(26,75,140,0.2) 0%, transparent 60%);
+}
+.team-tech-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.team-tech-inner .section-header .section-title { color: var(--white); }
+.two-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; }
+.panel {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px; padding: 2.5rem;
+}
+.panel-title {
+  font-family: var(--heading); font-size: 1.4rem; font-weight: 600;
+  color: var(--white); margin-bottom: 0.4rem; letter-spacing: -0.01em;
+}
+.panel-sub { font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 2rem; font-family: var(--heading); }
+.role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.role-item {
+  background: rgba(255,255,255,0.04);
+  border-radius: 3px; padding: 0.9rem 1rem;
+  font-size: 0.85rem; color: rgba(245,247,250,0.65);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.role-item svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+.tech-list { display: flex; flex-direction: column; gap: 0.7rem; }
+.tech-item {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.85rem 1rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 3px; border-left: 3px solid transparent;
+  font-size: 0.88rem; color: rgba(245,247,250,0.65);
+  transition: border-color 0.3s, background 0.3s;
+}
+.tech-item:hover { border-left-color: var(--gold); background: rgba(200,149,42,0.06); }
+.tech-num { font-family: var(--heading); font-size: 0.7rem; color: var(--gold); min-width: 1.5rem; }
+
+/* CTA */
+.cta-section {
+  background: var(--navy);
+  padding: 8rem 2rem;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(26,75,140,0.25) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cta-section .section-label { color: var(--gold); margin-bottom: 1rem; }
+.cta-title {
+  font-family: var(--heading); font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--white); line-height: 1.05; letter-spacing: -0.02em;
+  max-width: 800px; margin: 0 auto 1.5rem;
+  position: relative; z-index: 1;
+}
+.cta-title span { color: var(--gold); }
+.cta-desc {
+  font-size: 1.05rem; color: rgba(245,247,250,0.55);
+  max-width: 500px; margin: 0 auto 3rem; line-height: 1.7;
+  position: relative; z-index: 1;
+}
+.cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; position: relative; z-index: 1; }
+.btn-primary {
+  font-family: var(--heading); font-size: 0.85rem; letter-spacing: 0.1em;
+  text-transform: uppercase; font-weight: 600;
+  background: var(--gold); color: var(--navy);
+  padding: 1rem 2.5rem; border: none; cursor: pointer;
+  border-radius: 2px; text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline {
+  font-family: var(--heading); font-size: 0.85rem; letter-spacing: 0.1em;
+  text-transform: uppercase; font-weight: 600;
+  background: transparent; color: var(--white);
+  padding: 1rem 2.5rem; border: 1px solid rgba(245,247,250,0.25); cursor: pointer;
+  border-radius: 2px; text-decoration: none;
+  transition: border-color 0.3s, color 0.3s;
+  display: inline-block;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* FOOTER */
+footer {
+  background: #060F1C;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(200,149,42,0.15);
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1.5rem;
+}
+.footer-logo { font-family: var(--heading); font-size: 1.2rem; font-weight: 700; color: var(--white); }
+.footer-logo span { color: var(--gold); }
+.footer-info { font-size: 0.8rem; color: var(--gray-mid); line-height: 1.6; }
+.footer-copy { font-size: 0.75rem; color: rgba(138,154,181,0.5); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+@media (max-width: 768px) {
+  nav { padding: 1rem; }
+  .nav-tagline { display: none; }
+  .hero-stats { gap: 1.5rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card.featured { grid-column: span 1; }
+  .airport-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .airport-visual { display: none; }
+  .two-col-cards, .water-tabs, .rcm-layout, .two-panels { grid-template-columns: 1fr; gap: 2rem; }
+  .deliverable-grid { grid-template-columns: 1fr; }
+  .role-grid { grid-template-columns: 1fr; }
+  .airport-services { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .rcm-layout { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+<style id="htmlpub-breakpoint-visibility">@media (max-width: 390px) { .hp-hide-mobile { display: none !important; } }
+@media (min-width: 391px) and (max-width: 768px) { .hp-hide-tablet { display: none !important; } }
+@media (min-width: 769px) { .hp-hide-desktop { display: none !important; } }</style><style>#htmlpub-link-input::placeholder{color:rgba(0,0,0,0.40);}ul,ol{padding:20px;}</style></head>
+<body>
+
+<nav>
+  <div>
+    <div class="nav-logo">INGENIAR <span>AJ</span></div>
+    <div class="nav-tagline">S.A.S. · Colombia</div>
+  </div>
+  <div style="font-family:var(--heading);font-size:0.7rem;color:var(--gray-mid);letter-spacing:0.15em;text-transform:uppercase;">9 años · Gran Industria Nacional</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-img" id="hero-img" style=""></div>
+  <div class="hero-content" style="">
+    <div class="hero-badge">Portafolio de Servicios 2024</div>
+    <h1 style="">INGENIAR<br><span style="">AJ</span></h1>
+    <div class="hero-sub" style="">S.A.S. · Soluciones Integrales de Mantenimiento Industrial</div>
+    <p class="hero-desc" style="">Empresa colombiana con 9 años de experiencia en mantenimiento especializado. Personal calificado, herramientas certificadas y metodologías centradas en la confiabilidad.</p>
+    <div class="hero-stats" style="">
+      <div class="stat"><div class="stat-number">9</div><div class="stat-label">Años de experiencia</div></div>
+      <div class="stat"><div class="stat-number">8+</div><div class="stat-label">Sectores industriales</div></div>
+      <div class="stat"><div class="stat-number">RCM</div><div class="stat-label">Modelo operativo</div></div>
+    </div>
+    <div class="hero-sectors">
+      <span class="sector-tag">Construcción</span>
+      <span class="sector-tag">Manufactura</span>
+      <span class="sector-tag">Minería</span>
+      <span class="sector-tag">Energía</span>
+      <span class="sector-tag" style="">Oil &amp; Gas</span>
+      <span class="sector-tag">Aeroportuario</span>
+      <span class="sector-tag">Institucional</span>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-text">Explorar</div>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section class="services" style="">
+  <div class="section-header reveal" style="">
+    <div class="section-label" style="">Nuestros Servicios</div>
+    <h2 class="section-title" style="">Soluciones técnicas para cada industria</h2>
+    <p class="section-desc" style="">Operamos bajo estándares técnicos exigentes con metodologías modernas de mantenimiento centradas en la confiabilidad operacional.</p>
+  </div>
+  <div class="services-grid" style="">
+    <div class="service-card reveal">
+      <div class="service-num">01 / Aeroportuario</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 6L42 28H30V42H18V28H6L24 6Z" stroke="#C8952A" stroke-width="2" stroke-linejoin="round"></path>
+          <path d="M6 36H42" stroke="#1A4B8C" stroke-width="2"></path>
+        </svg>
+      </div>
+      <h3>Mantenimiento Aeroportuario</h3>
+      <p>Experiencia, acreditaciones y protocolos de seguridad operacional para intervenir infraestructura aeroportuaria en Colombia.</p>
+      <ul class="service-list">
+        <li>Infraestructura civil</li>
+        <li>Sistemas hidrosanitarios</li>
+        <li>Redes eléctricas</li>
+        <li>Sistemas HVAC aeroportuarios</li>
+        <li>PTAR y PTAP</li>
+        <li>Zonas verdes aeroportuarias</li>
+      </ul>
+    </div>
+    <div class="service-card reveal reveal-delay-1" style="">
+      <div class="service-num" style="">02 / HVAC</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="10" width="36" height="22" rx="2" stroke="#C8952A" stroke-width="2"></rect>
+          <path d="M16 32V38M32 32V38M10 38H38" stroke="#1A4B8C" stroke-width="2" stroke-linecap="round"></path>
+          <circle cx="24" cy="21" r="5" stroke="#C8952A" stroke-width="2"></circle>
+        </svg>
+      </div>
+      <h3 style="">Sistemas de Aire Acondicionado</h3>
+      <p style="">Distribuidores e instaladores de sistemas HVAC industriales, institucionales y residenciales. Marcas líderes del mercado.</p>
+      <ul class="service-list" style="">
+        <li style="">Diseño y suministro HVAC</li>
+        <li style="">Instalación certificada</li>
+        <li style="">Mantenimiento preventivo y correctivo</li>
+        <li style="">Repuestos originales</li>
+        <li style="">Carrier, York, Mitsubishi Electric</li>
+      </ul>
+    </div>
+    <div class="service-card reveal reveal-delay-2" style="">
+      <div class="service-num" style="">03 / Refrigeración</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="6" width="28" height="36" rx="2" stroke="#C8952A" stroke-width="2"></rect>
+          <path d="M18 18H30M18 24H26" stroke="#1A4B8C" stroke-width="2" stroke-linecap="round"></path>
+          <circle cx="24" cy="34" r="3" stroke="#C8952A" stroke-width="2"></circle>
+        </svg>
+      </div>
+      <h3 style="">Cuartos Fríos Industriales</h3>
+      <p style="">Diseño, fabricación e instalación de cuartos fríos cumpliendo normativa INVIMA para frigoríficos y empresas alimentarias.</p>
+      <ul class="service-list" style="">
+        <li style="">Ingeniería térmica aplicada</li>
+        <li style="">Panelería aislante</li>
+        <li style="">Sistemas de refrigeración</li>
+        <li style="">Automatización de temperatura</li>
+        <li>Túneles de enfriamiento</li>
+      </ul>
+    </div>
+    <div class="service-card featured reveal reveal-delay-3" style="">
+      <div class="service-num" style="color: var(--gold-light);">04 &amp; 05 / Tratamiento de Aguas</div>
+      <h3 style="">PTAR &amp; PTAP — Operación Técnica</h3>
+      <p style="">Servicios especializados para plantas de tratamiento de aguas residuales y potables. Garantizamos continuidad operativa y cumplimiento ambiental.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem;">
+        <div>
+          <div style="font-family:var(--heading);font-size:0.7rem;color:var(--gold-light);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">Aguas Residuales</div>
+          <ul class="service-list">
+            <li>Reactores biológicos</li>
+            <li>Control de aireación</li>
+            <li>Manejo de lodos</li>
+            <li>Bombas sumergibles</li>
+          </ul>
+        </div>
+        <div style="">
+          <div style="font-family: var(--heading); font-size: 0.7rem; color: var(--gold-light); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem;">Agua Potable</div>
+          <ul class="service-list" style="">
+            <li style="">Sedimentadores</li>
+            <li style="">Filtros multimedia</li>
+            <li style="">Sistemas de cloración</li>
+            <li>Control de calidad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AIRPORT SECTION -->
+<section class="airport">
+  <div class="airport-bg" style=""></div>
+  <div class="airport-inner" style="">
+    <div class="airport-content">
+      <div class="section-header">
+        <div class="section-label">Sector Aeroportuario</div>
+        <h2 class="section-title reveal">Operaciones en aeropuertos AIRPLAN</h2>
+        <p class="section-desc reveal">Trabajamos bajo procedimientos alineados con estándares de seguridad operacional aeroportuaria, garantizando soporte técnico especializado en operación continua.</p>
+      </div>
+      <div class="airplan-badge reveal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+        Aeropuertos operados por AIRPLAN
+      </div>
+      <div class="airport-services reveal">
+        <div class="airport-item">Mantenimiento civil de infraestructura</div>
+        <div class="airport-item">Sistemas hidrosanitarios</div>
+        <div class="airport-item">Redes eléctricas</div>
+        <div class="airport-item">Sistemas HVAC</div>
+        <div class="airport-item">Plantas PTAR</div>
+        <div class="airport-item">Plantas de potabilización</div>
+        <div class="airport-item">Evacuación de lodos</div>
+        <div class="airport-item">Zonas verdes aeroportuarias</div>
+      </div>
+    </div>
+    <div class="airport-visual reveal">
+      <div class="airport-img-wrap" style="">
+        <img src="https://leadpages.com/PLACEHOLDER_AIRPORT" alt="Infraestructura aeroportuaria" style="">
+        <div class="airport-accent"></div>
+        <div class="airport-accent2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HVAC + COLD -->
+<section class="hvac-cold" style="">
+  <div class="hvac-cold-inner" style="">
+    <div class="section-header reveal" style="">
+      <div class="section-label">Climatización &amp; Refrigeración</div>
+      <h2 class="section-title" style="">Confort térmico a escala industrial</h2>
+    </div>
+    <div class="two-col-cards">
+      <div class="big-card reveal">
+        <div class="big-card-header">
+          <div class="section-label">HVAC Industrial</div>
+          <h3>Sistemas de Aire Acondicionado</h3>
+        </div>
+        <div class="big-card-body">
+          <p>Aliados estratégicos de constructoras de la Costa Norte Colombiana. Diseño, suministro e instalación certificada de sistemas para todos los sectores.</p>
+          <div style="margin-bottom:1rem;">
+            <div style="font-size:0.8rem;color:#778090;text-transform:uppercase;letter-spacing:0.1em;font-family:var(--heading);margin-bottom:0.6rem;">Marcas Industriales</div>
+            <div class="tag-cloud">
+              <span class="tag">Carrier</span>
+              <span class="tag">York</span>
+              <span class="tag">Mitsubishi Electric</span>
+              <span class="tag">Goodman</span>
+              <span class="tag">Frigidaire</span>
+            </div>
+          </div>
+          <div style="font-size:0.8rem;color:#778090;text-transform:uppercase;letter-spacing:0.1em;font-family:var(--heading);margin-bottom:0.6rem;">Capacidades Residenciales</div>
+          <div class="tag-cloud">
+            <span class="tag">9.000 BTU</span>
+            <span class="tag">12.000 BTU</span>
+            <span class="tag">18.000 BTU</span>
+            <span class="tag">24.000 BTU</span>
+            <span class="tag">32.000 BTU</span>
+          </div>
+        </div>
+      </div>
+      <div class="big-card reveal reveal-delay-2">
+        <div class="big-card-header" style="">
+          <div class="section-label" style="">Refrigeración Industrial</div>
+          <h3 style="">Cuartos Fríos &amp; Cadena de Frío</h3>
+        </div>
+        <div class="big-card-body" style="">
+          <p style="">Diseño e instalación de cuartos fríos industriales bajo normativa INVIMA. Clientes principales: frigoríficos y empresas alimentarias de la Costa Norte Colombiana.</p>
+          <ul class="mini-list" style="">
+            <li>Ingeniería térmica y selección de equipos</li>
+            <li>Panelería aislante de alta eficiencia</li>
+            <li style="">Sistemas de refrigeración industriales</li>
+            <li>Automatización y control de temperatura</li>
+            <li style="">Cuartos de congelación y conservación</li>
+            <li style="">Túneles de enfriamiento rápido</li>
+          </ul>
+          <div style="margin-top: 1.5rem; padding: 1rem 1.25rem; background: rgba(200, 149, 42, 0.06); border-left: 3px solid var(--gold); border-radius: 2px;">
+            <p style="margin: 0px; font-size: 0.85rem; color: rgb(85, 96, 112);">Cumplimiento estricto de normativa <strong style="color:var(--navy);">INVIMA</strong> para industria alimentaria y farmacéutica.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WATER TREATMENT -->
+<section class="water">
+  <div class="water-bg" style=""></div>
+  <div class="water-inner" style="">
+    <div class="section-header reveal" style="">
+      <div class="section-label" style="">Tratamiento de Aguas</div>
+      <h2 class="section-title" style="">Operación técnica de plantas especializadas</h2>
+      <p class="section-desc" style="">Garantizamos continuidad operativa y cumplimiento de estándares sanitarios y ambientales nacionales en cada intervención.</p>
+    </div>
+    <div class="water-tabs">
+      <div class="water-tab-card reveal">
+        <h3>PTAR — Aguas Residuales</h3>
+        <div class="sub">Planta de Tratamiento de Aguas Residuales</div>
+        <ul class="service-list">
+          <li>Operación técnica de PTAR</li>
+          <li>Limpieza de reactores biológicos</li>
+          <li>Mantenimiento de sopladores</li>
+          <li>Control de aireación</li>
+          <li>Retiro y disposición de lodos</li>
+          <li>Bombas sumergibles</li>
+          <li>Ajuste de parámetros fisicoquímicos</li>
+          <li>Optimización de eficiencia del sistema</li>
+          <li>Cumplimiento normativo ambiental</li>
+        </ul>
+      </div>
+      <div class="water-tab-card reveal reveal-delay-2" style="">
+        <h3 style="">PTAP — Agua Potable</h3>
+        <div class="sub" style="">Planta de Tratamiento de Agua Potable</div>
+        <ul class="service-list" style="">
+          <li style="">Limpieza de sedimentadores</li>
+          <li>Mantenimiento de filtros multimedia</li>
+          <li>Sistemas de cloración</li>
+          <li style="">Bombas dosificadoras</li>
+          <li style="">Redes hidráulicas</li>
+          <li style="">Tanques de almacenamiento</li>
+          <li style="">Sistemas de bombeo</li>
+          <li style="">Control de calidad del agua</li>
+          <li style="">Optimización de potabilización</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RCM -->
+<section class="rcm" style="">
+  <div class="rcm-inner" style="">
+    <div class="section-header reveal" style="max-width:none;text-align:left;margin-bottom:0;">
+      <div class="section-label" style="">Metodología Operativa</div>
+      <h2 class="section-title" style="">Mantenimiento Centrado en Confiabilidad</h2>
+    </div>
+    <div class="rcm-layout" style="">
+      <div class="rcm-left">
+        <p style="font-size:1rem;color:#667080;line-height:1.7;margin-bottom:2rem;">Nuestro modelo operativo RCM reduce costos operativos y aumenta la disponibilidad de equipos mediante un enfoque sistemático y basado en datos.</p>
+        <div class="rcm-pillar-list">
+          <div class="rcm-pillar reveal">
+            <div class="pillar-dot"><span>01</span></div>
+            <div class="pillar-text"><h4>Análisis de Criticidad</h4><p>Identificación y priorización de activos según impacto operacional y riesgo.</p></div>
+          </div>
+          <div class="rcm-pillar reveal reveal-delay-1">
+            <div class="pillar-dot"><span>02</span></div>
+            <div class="pillar-text"><h4>Mantenimiento Preventivo</h4><p>Planes programados que anticipan fallas y reducen paradas no planificadas.</p></div>
+          </div>
+          <div class="rcm-pillar reveal reveal-delay-2">
+            <div class="pillar-dot"><span>03</span></div>
+            <div class="pillar-text"><h4>Mantenimiento Predictivo</h4><p>Monitoreo continuo con indicadores de desempeño y trazabilidad técnica.</p></div>
+          </div>
+          <div class="rcm-pillar reveal reveal-delay-3">
+            <div class="pillar-dot"><span>04</span></div>
+            <div class="pillar-text"><h4>Correctivo Controlado</h4><p>Intervenciones precisas con análisis de fallas y recomendaciones de mejora.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="rcm-right" style="">
+        <div class="rcm-deliverable reveal" style="">
+          <h4 style="">Entregables al Cliente</h4>
+          <div class="deliverable-grid" style="">
+            <div class="del-item">Informes técnicos periódicos</div>
+            <div class="del-item" style="">Reportes de intervención</div>
+            <div class="del-item">Análisis de fallas</div>
+            <div class="del-item" style="">Recomendaciones de mejora</div>
+            <div class="del-item" style="">Historial de activos</div>
+            <div class="del-item" style="">Planes de mantenimiento optimizados</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="reveal reveal-delay-2">
+          <div style="background: var(--navy); border-radius: 4px; padding: 2rem; text-align: center;">
+            <div style="font-family: var(--heading); font-size: 3rem; font-weight: 700; color: var(--gold); line-height: 1;">100%</div>
+            <div style="font-size: 0.78rem; color: rgba(245, 247, 250, 0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; font-family: var(--heading);">Trazabilidad técnica</div>
+          </div>
+          <div style="background: var(--navy); border-radius: 4px; padding: 2rem; text-align: center;">
+            <div style="font-family: var(--heading); font-size: 3rem; font-weight: 700; color: var(--gold); line-height: 1;">9</div>
+            <div style="font-size: 0.78rem; color: rgba(245, 247, 250, 0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; font-family: var(--heading);">Años de experiencia</div>
+          </div>
+        </div>
+        <div style="background: rgba(200, 149, 42, 0.06); border: 1px solid rgba(200, 149, 42, 0.2); border-radius: 4px; padding: 1.75rem 2rem;" class="reveal reveal-delay-3">
+          <div style="font-family: var(--heading); font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.08em;">Laboratorio Propio</div>
+          <p style="font-size: 0.88rem; color: rgb(102, 112, 128); line-height: 1.6;">Evaluación de materiales, verificación de compatibilidad técnica, control de calidad en obra y ensayos de desempeño. Confiabilidad garantizada en cada intervención.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM & TECH -->
+<section class="team-tech">
+  <div class="team-tech-bg" style=""></div>
+  <div class="team-tech-inner" style="">
+    <div class="section-header reveal">
+      <div class="section-label" style="color:var(--gold);">Capacidades</div>
+      <h2 class="section-title" style="">Talento humano y tecnología certificada</h2>
+    </div>
+    <div class="two-panels">
+      <div class="panel reveal">
+        <div class="panel-title">Talento Humano</div>
+        <div class="panel-sub">Equipo especializado</div>
+        <div class="role-grid">
+          <div class="role-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
+            Ingenieros especializados
+          </div>
+          <div class="role-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M6.34 6.34l-2.83 2.83M2 12h4M6.34 17.66l2.83 2.83M12 18v4M17.66 17.66l2.83-2.83M20 12h4M17.66 6.34l-2.83-2.83"></path></svg>
+            Técnicos HVAC certificados
+          </div>
+          <div class="role-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M7 10h10M7 14h6"></path></svg>
+            Operadores PTAR/PTAP
+          </div>
+          <div class="role-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+            Electricistas industriales
+          </div>
+          <div class="role-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M9 9h6M9 12h6M9 15h4"></path></svg>
+            Personal civil
+          </div>
+          <div class="role-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 8v4l3 3"></path></svg>
+            Supervisores HSEQ
+          </div>
+        </div>
+      </div>
+      <div class="panel reveal reveal-delay-2" style="">
+        <div class="panel-title">Herramientas &amp; Tecnología</div>
+        <div class="panel-sub" style="">Equipamiento industrial</div>
+        <div class="tech-list" style="">
+          <div class="tech-item" style=""><span class="tech-num">01</span>Equipos de diagnóstico especializado</div>
+          <div class="tech-item" style=""><span class="tech-num">02</span>Instrumentos eléctricos certificados</div>
+          <div class="tech-item" style=""><span class="tech-num">03</span>Herramientas HVAC profesionales</div>
+          <div class="tech-item" style=""><span class="tech-num">04</span>Equipos de medición ambiental</div>
+          <div class="tech-item" style=""><span class="tech-num">05</span>Equipos de mantenimiento hidráulico</div>
+          <div class="tech-item" style=""><span class="tech-num">06</span>Maquinaria para zonas verdes</div>
+          <div class="tech-item"><span class="tech-num">07</span>Tecnología de inspección técnica</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" style="">
+  <div class="section-label reveal" style="">¿Listo para trabajar juntos?</div>
+  <h2 class="cta-title reveal" style="">Su proyecto merece el mejor mantenimiento.</h2>
+  <p class="cta-desc reveal" style="">Contacte a nuestro equipo técnico y reciba una propuesta personalizada basada en las necesidades reales de su operación.</p>
+  <div class="cta-actions reveal" style="">
+    <a href="mailto:contacto@ingeniaraj.com" class="btn-primary">Solicitar propuesta técnica</a>
+    <a href="tel:+573000000000" class="btn-outline" style="">Contactar ahora</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="">
+  <div class="footer-inner" style="">
+    <div>
+      <div class="footer-logo">INGENIAR <span>AJ</span> S.A.S.</div>
+      <div class="footer-info" style="margin-top:0.4rem;">Colombia · Mantenimiento Industrial Especializado</div>
+    </div>
+    <div class="footer-info" style="text-align:center;">
+      Aeroportuario · HVAC · Cuartos Fríos<br>
+      PTAR · PTAP · Zonas Verdes · RCM
+    </div>
+    <div class="footer-copy">© 2024 INGENIAR AJ S.A.S. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+
+
+<script data-htmlpub-analytics>
+(function(){
+var PID="y9ft4usc8n4fmh9z80ytiets";
+var EXP_ID="";
+var EXP_VARIANT="";
+var API="/collect";
+var FLUSH_INTERVAL=5000;
+var FLUSH_MAX=20;
+
+function uuid(){return"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(c){var r=Math.random()*16|0;return(c==="x"?r:(r&3|8)).toString(16)});}
+function getOrSet(store,key){try{var v=store.getItem(key);if(v)return v;v=uuid();store.setItem(key,v);return v;}catch(e){return uuid();}}
+
+var visitorId=getOrSet(localStorage,"_hp_vid");
+var sessionId=getOrSet(sessionStorage,"_hp_sid");
+
+var params=new URLSearchParams(location.search);
+var utmSource=params.get("utm_source")||undefined;
+var utmMedium=params.get("utm_medium")||undefined;
+var utmCampaign=params.get("utm_campaign")||undefined;
+
+var vw=window.innerWidth||0;
+var vh=window.innerHeight||0;
+var ua=navigator.userAgent||"";
+var isMobileUA=/Android|iPhone|iPod|iPad|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+var maxScreenDim=Math.max(screen.width||0,screen.height||0);
+var deviceType=isMobileUA?(maxScreenDim<=812||vw<768?"mobile":"tablet"):"desktop";
+
+function detectBrowser(){
+if(ua.indexOf("Edg/")>-1)return"Edge";
+if(ua.indexOf("Chrome/")>-1)return"Chrome";
+if(ua.indexOf("Safari/")>-1&&ua.indexOf("Chrome/")===-1)return"Safari";
+if(ua.indexOf("Firefox/")>-1)return"Firefox";
+return"Other";
+}
+function detectOS(){
+if(ua.indexOf("iPhone")>-1||ua.indexOf("iPad")>-1)return"iOS";
+if(ua.indexOf("Android")>-1)return"Android";
+if(ua.indexOf("Mac OS")>-1)return"macOS";
+if(ua.indexOf("Windows")>-1)return"Windows";
+if(ua.indexOf("Linux")>-1)return"Linux";
+return"Other";
+}
+var browserFamily=detectBrowser();
+var osFamily=detectOS();
+
+var buffer=[];
+function makeEvent(type,payload){
+return{pageId:PID,eventType:type,visitorId:visitorId,sessionId:sessionId,payload:payload||undefined,referrer:document.referrer||undefined,utmSource:utmSource,utmMedium:utmMedium,utmCampaign:utmCampaign,deviceType:deviceType,browserFamily:browserFamily,osFamily:osFamily,viewportWidth:vw,viewportHeight:vh,experimentId:EXP_ID||undefined,experimentVariant:EXP_VARIANT||undefined,timestamp:Date.now()};
+}
+function pushEvent(type,payload){buffer.push(makeEvent(type,payload));if(buffer.length>=FLUSH_MAX)flush();}
+
+function flush(){
+if(buffer.length===0)return;
+var batch=buffer.splice(0,FLUSH_MAX);
+try{navigator.sendBeacon(API,JSON.stringify({events:batch}));}catch(e){}
+}
+
+setInterval(flush,FLUSH_INTERVAL);
+document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden")flush();});
+window.addEventListener("pagehide",flush);
+
+pushEvent("page_view");
+
+var scrollMilestones={25:false,50:false,75:false,100:false};
+function checkScroll(){
+var docH=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);
+var scrollY=window.scrollY||window.pageYOffset;
+var winH=window.innerHeight;
+if(docH<=winH){if(!scrollMilestones[100]){scrollMilestones[100]=true;pushEvent("scroll_depth",{depth:100});}return;}
+var pct=Math.round(((scrollY+winH)/docH)*100);
+[25,50,75,100].forEach(function(m){if(pct>=m&&!scrollMilestones[m]){scrollMilestones[m]=true;pushEvent("scroll_depth",{depth:m});}});
+}
+window.addEventListener("scroll",checkScroll,{passive:true});
+setTimeout(checkScroll,1000);
+
+document.addEventListener("click",function(e){
+var el=e.target;
+if(!el||!el.tagName)return;
+var tag=el.tagName.toLowerCase();
+if(!(tag==="a"||tag==="button"||tag==="input"||tag==="select"||tag==="textarea"||el.getAttribute("role")==="button"||el.closest("a,button,[role=button]")))return;
+var docH=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,1);
+var rect=el.getBoundingClientRect();
+pushEvent("element_click",{x:Math.min(1,Math.max(0,(rect.left+rect.width/2)/(document.documentElement.clientWidth||1))),y:Math.min(1,Math.max(0,(rect.top+rect.height/2+(window.scrollY||0))/docH)),selector:el.id?"#"+el.id:tag+(el.className&&typeof el.className==="string"?"."+el.className.trim().split(/\s+/).slice(0,2).join("."):""),viewportWidth:vw,viewportHeight:vh});
+},true);
+
+document.addEventListener("submit",function(e){
+var f=e.target;
+if(!f||f.tagName!=="FORM")return;
+pushEvent("form_submit",{formIdentifier:f.id||f.getAttribute("name")||"form-"+([].indexOf.call(document.forms,f))});
+},true);
+
+window.addEventListener("load",function(){
+setTimeout(function(){
+try{
+var perf=performance.getEntriesByType("navigation")[0];
+if(perf){
+var ev=makeEvent("rum_timing",{loadTimeMs:Math.round(perf.loadEventEnd-perf.startTime),ttfbMs:Math.round(perf.responseStart-perf.startTime),fcpMs:undefined});
+var paintEntries=performance.getEntriesByType("paint");
+for(var i=0;i<paintEntries.length;i++){if(paintEntries[i].name==="first-contentful-paint"){ev.payload.fcpMs=Math.round(paintEntries[i].startTime);break;}}
+buffer.push(ev);
+}
+}catch(e){}
+},2000);
+});
+})();
+</script><script data-htmlpub-forms>
+(function(){
+var slug="XPbwQMJFJn";
+var api="/forms/submit";
+
+// SYNC: cleanKey/fieldKey/_blocklist/_isInjected/collect must mirror app/src/lib/form-collection-script.ts
+function cleanKey(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,"_").replace(/^_|_$/g,"").substring(0,30);}
+function fieldKey(el,idx){
+if(el.name)return el.name;
+if(el.id)return el.id;
+var df=el.getAttribute("data-field")||el.getAttribute("data-name");
+if(df)return df;
+if(el.placeholder){var ck=cleanKey(el.placeholder);if(ck)return ck;}
+var al=el.getAttribute("aria-label");
+if(al){var ck2=cleanKey(al);if(ck2)return ck2;}
+if(el.id){var lbl=document.querySelector('label[for="'+el.id+'"]');if(lbl&&lbl.textContent){var ck3=cleanKey(lbl.textContent);if(ck3)return ck3;}}
+var par=el.closest?el.closest("label"):null;
+if(par&&par.textContent){var ck4=cleanKey(par.textContent);if(ck4)return ck4;}
+return (el.type||"field")+"_"+idx;
+}
+var _blocklist=/^(lp[_s]?plan|ub[_s]?plan|gtrans|__hstc|__hssc|__hsfp|hutk|_mkto_trk|_biz_uid|_biz_nA|_biz_pendingA|_biz_flagsA|mkt_tok|li_fat_id|_ga|_gid|_fbp|_fbc|_uetsid|_uetvid|mc_cid|mc_eid|_drip_client_|__ss|__ss_referrer|ss_campaign|ss_source|ss_cid|siq_|sq_|_uc_|tl|sl|vote|query|_hp_vid)$/i;
+function _isInjected(el){
+// Skip hidden inputs not present in the original page HTML.
+// Third-party scripts (Customers.ai, HubSpot, etc.) inject hidden fields
+// at runtime. We detect these by checking if they were present at DOMContentLoaded.
+if(el.type==="hidden"&&!el.hasAttribute("data-hp-original"))return true;
+return false;
+}
+function collect(f){
+var d={};
+var els=f.elements||f.querySelectorAll("input,textarea,select");
+var used={};
+var hasVisibleValue=false;
+for(var i=0;i<els.length;i++){
+var el=els[i];
+if(el.type==="file"||el.type==="submit"||el.type==="button")continue;
+if((el.type==="checkbox"||el.type==="radio")&&!el.checked)continue;
+if(_isInjected(el))continue;
+var key=fieldKey(el,i);
+if(_blocklist.test(key))continue;
+if(used[key]){key=key+"_"+i;}
+used[key]=true;
+d[key]=el.value;
+if(el.type!=="hidden"&&el.value&&el.value.trim())hasVisibleValue=true;
+}
+if(!hasVisibleValue)return {};
+return d;
+}
+
+function showMsg(f,ok){
+var m=document.createElement("div");
+m.textContent=ok?"Thank you! Your submission has been received.":"Something went wrong. Please try again.";
+m.style.cssText="padding:12px 16px;margin:8px 0;border-radius:6px;font-family:system-ui,sans-serif;font-size:14px;"+(ok?"background:#f0fdf4;color:#166534;border:1px solid #bbf7d0":"background:#fef2f2;color:#991b1b;border:1px solid #fecaca");
+f.parentNode.insertBefore(m,f.nextSibling);
+setTimeout(function(){m.remove()},5000);
+}
+
+function formId(f){
+if(f.tagName==="FORM")return f.id||f.getAttribute("name")||"form";
+return f.id||"section-"+([].indexOf.call(document.querySelectorAll("[data-htmlpub-fake-form]"),f));
+}
+function submitData(f,data){
+var btn=f.querySelector("[type=submit],button:not([type])");
+if(btn)btn.disabled=true;
+fetch(api,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({pageSlug:slug,formIdentifier:formId(f),data:data})}).then(function(r){
+if(btn)btn.disabled=false;
+if(r.ok){showMsg(f,true);if(typeof f.reset==="function")f.reset();}else{showMsg(f,false);}
+}).catch(function(){if(btn)btn.disabled=false;showMsg(f,false);});
+}
+
+// Tag all hidden inputs present in the original HTML so we can distinguish
+// them from ones injected later by third-party scripts (Customers.ai, etc.)
+document.querySelectorAll('input[type="hidden"]').forEach(function(el){el.setAttribute("data-hp-original","1");});
+
+document.addEventListener("submit",function(e){
+var f=e.target;
+if(f.tagName!=="FORM")return;
+e.preventDefault();
+submitData(f,collect(f));
+},true);
+
+// --- Fake form interception (inputs outside <form>) --- SYNC
+var lastFakeSubmit=0;
+function findFormLikeContainer(el){
+var cur=el.parentElement;
+for(var depth=0;cur&&depth<8;depth++){
+if(cur.tagName==="FORM")return null;
+var inputs=cur.querySelectorAll("input:not([type=hidden]):not([type=submit]):not([type=button]),textarea,select");
+if(inputs.length>=1&&inputs.length<=20)return cur;
+cur=cur.parentElement;
+}
+return null;
+}
+document.addEventListener("click",function(e){
+var t=e.target.closest?e.target.closest("button,a,[role=button],input[type=submit]"):null;
+if(!t)return;
+if(t.closest("form"))return;
+var now=Date.now();
+if(now-lastFakeSubmit<2000)return;
+var container=findFormLikeContainer(t);
+if(!container)return;
+var data=collect(container);
+if(Object.keys(data).length===0)return;
+var hasAnyValue=Object.keys(data).some(function(k){return data[k]&&String(data[k]).trim();});
+if(!hasAnyValue)return;
+lastFakeSubmit=now;
+container.setAttribute("data-htmlpub-fake-form","");
+submitData(container,data);
+},true);
+})();
+</script></body></html>
