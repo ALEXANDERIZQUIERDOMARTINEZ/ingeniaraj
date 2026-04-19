@@ -47,7 +47,7 @@ body { font-family: var(--body); color: var(--text); background: var(--charcoal)
 /* CUSTOMIZED_BY_CURSOR: nav-white + logo + mobile-menu */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  min-height: 92px;
+  min-height: 156px;
   height: auto;
   padding: 0.35rem 1.25rem;
   display: grid;
@@ -62,7 +62,7 @@ nav {
 /* Logo */
 .nav-brand { display: flex; align-items: center; }
 .nav-logo-img {
-  width: 100px; height: 100px; object-fit: contain; display: block;
+  width: 180px; height: 180px; object-fit: contain; display: block;
   filter: drop-shadow(0 2px 8px rgba(26,39,68,0.12));
 }
 /* Menu */
@@ -187,7 +187,7 @@ nav {
 .hero-content {
   position: relative; z-index: 2;
   text-align: center;
-  padding: 7.5rem 2rem 5rem;
+  padding: 8.75rem 2rem 5rem;
   max-width: 1000px;
 }
 
@@ -230,6 +230,15 @@ nav {
   max-width: 1200px; margin: 0 auto;
   background: var(--gray-light);
 }
+.services-featured-wrap {
+  max-width: 1200px;
+  margin: 2px auto 0;
+  background: var(--gray-light);
+}
+.services-featured-wrap .service-card.featured {
+  margin: 0;
+  border-radius: 0 0 6px 6px;
+}
 .service-card {
   background: var(--white);
   padding: 2.5rem;
@@ -250,29 +259,114 @@ nav {
 .services-grid > .service-card:nth-child(2) { background: #F8F1E6; }
 .services-grid > .service-card:nth-child(3) { background: #E8F4F1; }
 .service-card.featured {
-  background: var(--blue);
-  grid-column: span 2;
+  background: linear-gradient(152deg, #142447 0%, var(--blue) 42%, #1a3270 100%);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 24px 56px rgba(15, 22, 38, 0.35);
 }
 .service-card.featured .featured-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: 2rem 2.75rem;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.12fr);
+  gap: 2.25rem 3rem;
   align-items: start;
 }
-.service-card.featured .featured-media .service-num { margin-bottom: 1rem; }
+.service-card.featured .featured-media .service-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 4px;
+  background: rgba(232, 175, 69, 0.12);
+  border: 1px solid rgba(232, 175, 69, 0.35);
+  letter-spacing: 0.16em;
+  font-size: 0.62rem;
+  line-height: 1.3;
+}
 .service-card.featured .featured-media .service-icon {
   max-width: none;
   width: 100%;
   aspect-ratio: 4 / 3;
   margin-bottom: 0;
+  border-radius: 10px;
 }
 .service-card.featured .featured-main h3 { margin-top: 0; }
+.featured-plantas-heading {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin: 0 0 0.5rem;
+  max-width: min(100%, 38rem);
+}
+.featured-plantas-tagline {
+  font-family: var(--heading);
+  font-size: clamp(0.82rem, 1.5vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin: 0 0 1rem;
+  line-height: 1.35;
+  max-width: 36rem;
+}
+.featured-plantas-intro {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 1.75rem;
+  max-width: 48rem;
+}
 .service-card.featured .featured-water-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 1.5rem 2rem;
-  margin-top: 1.25rem;
+  gap: 1.5rem 1.75rem;
+  margin-top: 0.25rem;
   max-width: 100%;
+}
+.featured-water-panel {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 1.35rem 1.4rem 1.25rem;
+  backdrop-filter: blur(8px);
+}
+.featured-water-panel__title {
+  font-family: var(--heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin: 0 0 0.4rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(232, 175, 69, 0.25);
+}
+.featured-water-panel__subtitle {
+  font-size: 0.84rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.58);
+  margin: 0 0 1rem;
+}
+.service-card.featured .featured-water-panel .service-list {
+  gap: 0;
+}
+.service-card.featured .featured-water-panel .service-list li {
+  font-size: 0.86rem;
+  line-height: 1.42;
+  padding: 0.42rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.82);
+}
+.service-card.featured .featured-water-panel .service-list li:last-child {
+  border-bottom: none;
+}
+.service-card.featured .featured-water-panel .service-list li::before {
+  margin-top: 0.5rem;
 }
 .service-icon {
   width: 100%;
@@ -314,7 +408,6 @@ nav {
 }
 .service-card.featured h3 { color: var(--white); }
 .service-card p { font-size: 0.92rem; color: #667080; line-height: 1.65; margin-bottom: 1.25rem; }
-.service-card.featured p { color: rgba(255,255,255,0.65); }
 .service-list {
   list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
 }
@@ -331,113 +424,36 @@ nav {
 .service-card.featured .service-list li::before { background: var(--gold); }
 .service-card.featured .service-num { color: var(--gold-light); }
 
-/* AIRPORT SECTION */
-.airport {
-  background: var(--blue);
-  padding: 7rem 2rem;
-  position: relative; overflow: hidden;
+.service-card .service-detail-kicker {
+  font-family: var(--heading);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin: 0 0 0.35rem;
 }
-.airport-bg {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 70% 50% at 80% 50%, rgba(37,84,199,0.45) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 15% 30%, rgba(200,149,42,0.10) 0%, transparent 50%);
+.service-card .service-detail-label {
+  font-family: var(--heading);
+  font-size: 0.78rem;
+  color: #778090;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.55rem;
 }
-.airport-inner {
-  position: relative; z-index: 1;
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+.service-card .tag-cloud { margin-bottom: 0.85rem; }
+.service-card .service-invima-note {
+  margin-top: 1.1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(27, 58, 138, 0.08);
+  border-left: 3px solid var(--blue);
+  border-radius: 2px;
+  font-size: 0.85rem;
+  color: #556070;
+  line-height: 1.55;
 }
-.airport-content .section-label { color: var(--gold-light); }
-.airport-content .section-title { color: var(--white); }
-.airport-content .section-desc { color: rgba(255,255,255,0.65); text-align: left; }
-.airport-content .section-header { text-align: left; margin: 0 0 2rem; }
-.airplan-badge {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  background: rgba(200,149,42,0.12); border: 1px solid rgba(200,149,42,0.35);
-  padding: 0.6rem 1.2rem; border-radius: 3px;
-  font-size: 0.8rem; color: var(--gold-light); letter-spacing: 0.1em;
-  font-family: var(--heading); text-transform: uppercase;
-  margin-bottom: 2rem;
-}
-.airport-services {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
-}
-.airport-item {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  padding: 1.1rem 1.25rem; border-radius: 3px;
-  font-size: 0.87rem; color: rgba(255,255,255,0.75);
-  display: flex; align-items: center; gap: 0.6rem;
-  transition: background 0.3s, border-color 0.3s;
-}
-.airport-item:hover { background: rgba(192,39,45,0.2); border-color: rgba(192,39,45,0.5); }
-.airport-item::before {
-  content: ''; width: 6px; height: 6px;
-  background: var(--gold); border-radius: 50%; flex-shrink: 0;
-}
-.airport-visual { position: relative; }
-.airport-img-wrap {
-  position: relative;
-  aspect-ratio: 4/3;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow:
-    0 24px 70px rgba(0,0,0,0.45),
-    0 8px 24px rgba(0,0,0,0.28),
-    inset 0 0 0 1px rgba(255,255,255,0.06);
-}
-.airport-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.airport-img-wrap:hover img { transform: scale(1.03); }
-.airport-accent {
-  position: absolute; bottom: -1.5rem; right: -1.5rem;
-  width: 120px; height: 120px;
-  border: 2px solid rgba(200,149,42,0.4); border-radius: 50%;
-}
-.airport-accent2 {
-  position: absolute; top: -1rem; left: -1rem;
-  width: 60px; height: 60px;
-  background: var(--red); border-radius: 2px; opacity: 0.2;
-}
+#hvac { scroll-margin-top: 12rem; }
 
-/* HVAC & COLD ROOMS */
-.hvac-cold {
-  background: var(--gray-light);
-  padding: 7rem 2rem;
-}
-.hvac-cold-inner { max-width: 1200px; margin: 0 auto; }
-.two-col-cards {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem;
-}
-.big-card {
-  border-radius: 4px; overflow: hidden;
-  box-shadow: 0 4px 24px rgba(27,58,138,0.10), 0 1px 4px rgba(0,0,0,0.06);
-}
-.big-card-header {
-  background: var(--blue); padding: 2.5rem;
-  position: relative; overflow: hidden;
-}
-.big-card-header::after {
-  content: '';
-  position: absolute; top: -30px; right: -30px;
-  width: 140px; height: 140px;
-  border: 2px solid rgba(200,149,42,0.2); border-radius: 50%;
-}
-.big-card-header .section-label { color: var(--gold-light); margin-bottom: 0.5rem; }
-.big-card-header h3 {
-  font-family: var(--heading); font-weight: 700;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  color: var(--white); letter-spacing: -0.01em; line-height: 1.1;
-}
-.big-card-body { background: var(--white); padding: 2rem 2.5rem; }
-.big-card-body p { font-size: 0.93rem; color: #667080; line-height: 1.65; margin-bottom: 1.5rem; }
+/* Etiquetas tipo chip (servicios + otros bloques) */
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
 .tag {
   font-family: var(--heading); font-size: 0.7rem; letter-spacing: 0.1em;
@@ -456,49 +472,8 @@ nav {
   background: var(--red); border-radius: 50%; flex-shrink: 0; margin-top: 0.45rem;
 }
 
-/* WATER TREATMENT */
-.water {
-  background: var(--charcoal);
-  padding: 7rem 2rem;
-  position: relative; overflow: hidden;
-}
-.water-bg {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 60% 70% at 20% 50%, rgba(27,58,138,0.25) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 85% 30%, rgba(192,39,45,0.12) 0%, transparent 55%);
-  background-image: radial-gradient(rgba(27,58,138,0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-.water-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-.water-inner .section-header { max-width: none; text-align: left; margin-bottom: 3rem; }
-.water-inner .section-title { color: var(--white); }
-.water-inner .section-label { color: var(--gold); }
-.water-inner .section-desc { color: rgba(255,255,255,0.55); }
-.water-tabs {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-}
-.water-tab-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(27,58,138,0.3);
-  border-radius: 4px; padding: 2.5rem;
-  position: relative; overflow: hidden;
-  transition: border-color 0.3s;
-}
-.water-tab-card:hover { border-color: rgba(192,39,45,0.5); }
-.water-tab-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; width: 4px; bottom: 0;
-  background: linear-gradient(to bottom, var(--blue-light), var(--red));
-}
-.water-tab-card h3 {
-  font-family: var(--heading); font-weight: 600;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  color: var(--white); margin-bottom: 0.5rem; letter-spacing: -0.01em;
-}
-.water-tab-card .sub { font-size: 0.8rem; color: var(--gold-light); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; font-family: var(--heading); }
-.water-tab-card .service-list li { color: rgba(255,255,255,0.65); }
-.water-tab-card .service-list li::before { background: var(--gold); }
+/* Ancla menú «Plantas» → tarjeta PTAR/PTAP en #servicios */
+#plantas { scroll-margin-top: 12rem; }
 
 /* RCM SECTION */
 .rcm {
@@ -506,6 +481,17 @@ nav {
   padding: 7rem 2rem;
 }
 .rcm-inner { max-width: 1200px; margin: 0 auto; }
+.rcm-intro-banner {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2.4vw, 1.55rem);
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin: 0 0 1.25rem;
+  max-width: 52rem;
+}
 .rcm-layout {
   display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start;
   margin-top: 4rem;
@@ -596,6 +582,45 @@ nav {
 .tech-item:hover { border-left-color: var(--gold); background: rgba(200,149,42,0.08); }
 .tech-num { font-family: var(--heading); font-size: 0.7rem; color: var(--gold); min-width: 1.5rem; }
 
+/* SEDES */
+#sedes { scroll-margin-top: 12rem; }
+.sedes {
+  background: var(--white);
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(26,39,68,0.06);
+}
+.sedes-inner { max-width: 1100px; margin: 0 auto; }
+.sedes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.sede-card {
+  background: var(--gray-light);
+  border-radius: 4px;
+  padding: 1.75rem 2rem;
+  border-left: 4px solid var(--red);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.sede-card:hover {
+  box-shadow: 0 12px 36px rgba(26,39,68,0.1);
+  transform: translateY(-2px);
+}
+.sede-city {
+  font-family: var(--heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.85rem;
+}
+.sede-address {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
 /* CTA */
 .cta-section {
   background: var(--red);
@@ -619,6 +644,12 @@ nav {
   position: relative; z-index: 1;
 }
 .cta-title span { color: var(--gold-light); }
+.cta-title--kick {
+  font-size: clamp(3rem, 10vw, 6.5rem);
+  max-width: 1100px;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+}
 .cta-desc {
   font-size: 1.05rem; color: rgba(255,255,255,0.75);
   max-width: 500px; margin: 0 auto 3rem; line-height: 1.7;
@@ -678,13 +709,13 @@ footer {
 .reveal-delay-4 { transition-delay: 0.4s; }
 
 @media (max-width: 768px) {
-  nav { height: 64px; grid-template-columns: auto auto; padding: 0 0.9rem; gap: 0; }
+  nav { grid-template-columns: auto auto; padding: 0.25rem 0.9rem; gap: 0; }
   .nav-menu { display: none; }
   .nav-social { display: none; }
   .nav-hamburger { display: flex; }
   .nav-mobile { display: block; }
-  nav { min-height: 72px; }
-  .nav-logo-img { width: 76px; height: 76px; }
+  nav { min-height: 118px; }
+  .nav-logo-img { width: 132px; height: 132px; }
   .hero-stats { gap: 1.5rem; }
   .hero-split {
     grid-template-columns: 1fr;
@@ -692,7 +723,6 @@ footer {
   }
   .hero-pane--right { border-left: none; border-top: 1px solid rgba(255,255,255,0.18); }
   .services-grid { grid-template-columns: 1fr; }
-  .service-card.featured { grid-column: span 1; }
   .service-card.featured .featured-layout {
     grid-template-columns: 1fr;
     gap: 1.75rem;
@@ -705,20 +735,17 @@ footer {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
-  .airport-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .airport-visual { display: none; }
-  .two-col-cards, .water-tabs, .rcm-layout, .two-panels { grid-template-columns: 1fr; gap: 2rem; }
+  .rcm-layout, .two-panels { grid-template-columns: 1fr; gap: 2rem; }
   .deliverable-grid { grid-template-columns: 1fr; }
   .role-grid { grid-template-columns: 1fr; }
-  .airport-services { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; text-align: center; }
   .rcm-layout { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .service-card:hover .service-icon img,
-  .airport-img-wrap:hover img { transform: none !important; }
+  .service-card:hover .service-icon img { transform: none !important; }
+  .featured-water-panel { backdrop-filter: none; }
 }
 </style>
 <style id="htmlpub-breakpoint-visibility">@media (max-width: 390px) { .hp-hide-mobile { display: none !important; } }
@@ -729,17 +756,17 @@ footer {
 <nav>
   <!-- LOGO -->
   <div class="nav-brand">
-    <img class="nav-logo-img" src="https://i.ibb.co/v4hhs5m4/logoingeniar.png" alt="INGENIAR AJ" width="100" height="100" decoding="async">
+    <img class="nav-logo-img" src="https://i.ibb.co/v4hhs5m4/logoingeniar.png" alt="INGENIAR AJ" width="180" height="180" decoding="async">
   </div>
 
   <!-- MENÚ CENTRO -->
   <ul class="nav-menu">
     <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#aeroportuario">Aeroportuario</a></li>
     <li><a href="#hvac">HVAC &amp; Frío</a></li>
-    <li><a href="#aguas">Tratamiento</a></li>
+    <li><a href="#plantas">Plantas</a></li>
     <li><a href="#rcm">RCM</a></li>
     <li><a href="#equipo">Equipo</a></li>
+    <li><a href="#sedes">Sedes</a></li>
     <li><a href="#contacto" class="nav-cta">Contacto</a></li>
   </ul>
 
@@ -766,11 +793,11 @@ footer {
   <div class="nav-mobile" id="nav-mobile">
     <ul>
       <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#aeroportuario">Aeroportuario</a></li>
       <li><a href="#hvac">HVAC &amp; Frío</a></li>
-      <li><a href="#aguas">Tratamiento</a></li>
+      <li><a href="#plantas">Plantas</a></li>
       <li><a href="#rcm">RCM</a></li>
       <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#sedes">Sedes</a></li>
       <li><a href="#contacto" class="nav-cta">Contacto</a></li>
     </ul>
   </div>
@@ -809,37 +836,56 @@ footer {
         <li>Zonas verdes aeroportuarias</li>
       </ul>
     </div>
-    <div class="service-card reveal reveal-delay-1" style="">
+    <div class="service-card reveal reveal-delay-1" id="hvac" aria-labelledby="hvac-card-titulo">
       <div class="service-num" style="">02 / HVAC</div>
       <div class="service-icon">
         <img src="https://i.ibb.co/F4h81KxT/mantemientoaireindustriales.jpg" alt="Sistemas de Aire Acondicionado" width="800" height="500" decoding="async" loading="lazy">
       </div>
-      <h3 style="">Sistemas de Aire Acondicionado</h3>
-      <p style="">Distribuidores e instaladores de sistemas HVAC industriales, institucionales y residenciales. Marcas líderes del mercado.</p>
-      <ul class="service-list" style="">
-        <li style="">Diseño y suministro HVAC</li>
-        <li style="">Instalación certificada</li>
-        <li style="">Mantenimiento preventivo y correctivo</li>
-        <li style="">Repuestos originales</li>
-        <li style="">Carrier, York, Mitsubishi Electric</li>
-      </ul>
+      <div class="service-detail-kicker">HVAC Industrial</div>
+      <h3 style="" id="hvac-card-titulo">Sistemas de Aire Acondicionado</h3>
+      <p style="">Aliados estratégicos de constructoras de la Costa Norte Colombiana. Diseño, suministro e instalación certificada de sistemas para todos los sectores.</p>
+      <div>
+        <div class="service-detail-label">Marcas Industriales</div>
+        <div class="tag-cloud">
+          <span class="tag">Carrier</span>
+          <span class="tag">York</span>
+          <span class="tag">Mitsubishi Electric</span>
+          <span class="tag">Goodman</span>
+          <span class="tag">Frigidaire</span>
+        </div>
+      </div>
+      <div>
+        <div class="service-detail-label">Capacidades Residenciales</div>
+        <div class="tag-cloud">
+          <span class="tag">9.000 BTU</span>
+          <span class="tag">12.000 BTU</span>
+          <span class="tag">18.000 BTU</span>
+          <span class="tag">24.000 BTU</span>
+          <span class="tag">32.000 BTU</span>
+        </div>
+      </div>
     </div>
-    <div class="service-card reveal reveal-delay-2" style="">
+    <div class="service-card reveal reveal-delay-2" aria-labelledby="frio-card-titulo">
       <div class="service-num" style="">03 / Refrigeración</div>
       <div class="service-icon">
-        <img src="https://i.ibb.co/jPdhYcHq/cuartofrio.jpg" alt="Cuartos Fríos Industriales" width="800" height="500" decoding="async" loading="lazy">
+        <img src="https://i.ibb.co/jPdhYcHq/cuartofrio.jpg" alt="Cuartos fríos y cadena de frío" width="800" height="500" decoding="async" loading="lazy">
       </div>
-      <h3 style="">Cuartos Fríos Industriales</h3>
-      <p style="">Diseño, fabricación e instalación de cuartos fríos cumpliendo normativa INVIMA para frigoríficos y empresas alimentarias.</p>
-      <ul class="service-list" style="">
-        <li style="">Ingeniería térmica aplicada</li>
-        <li style="">Panelería aislante</li>
-        <li style="">Sistemas de refrigeración</li>
-        <li style="">Automatización de temperatura</li>
-        <li>Túneles de enfriamiento</li>
+      <div class="service-detail-kicker">Refrigeración Industrial</div>
+      <h3 style="" id="frio-card-titulo">Cuartos Fríos &amp; Cadena de Frío</h3>
+      <p style="">Diseño e instalación de cuartos fríos industriales bajo normativa INVIMA. Clientes principales: frigoríficos y empresas alimentarias de la Costa Norte Colombiana.</p>
+      <ul class="mini-list">
+        <li>Ingeniería térmica y selección de equipos</li>
+        <li>Panelería aislante de alta eficiencia</li>
+        <li>Sistemas de refrigeración industriales</li>
+        <li>Automatización y control de temperatura</li>
+        <li>Cuartos de congelación y conservación</li>
+        <li>Túneles de enfriamiento rápido</li>
       </ul>
+      <div class="service-invima-note">Cumplimiento estricto de normativa <strong style="color:var(--blue);">INVIMA</strong> para industria alimentaria y farmacéutica.</div>
     </div>
-    <div class="service-card featured reveal reveal-delay-3" style="">
+  </div>
+  <div class="services-featured-wrap">
+    <div class="service-card featured reveal reveal-delay-3" id="plantas" aria-labelledby="plantas-card-titulo">
       <div class="featured-layout">
         <div class="featured-media">
           <div class="service-num" style="color: var(--gold-light);">04 &amp; 05 / Tratamiento de Aguas</div>
@@ -848,167 +894,42 @@ footer {
           </div>
         </div>
         <div class="featured-main">
-          <h3 style="">PTAR &amp; PTAP — Operación Técnica</h3>
-          <p style="">Servicios especializados para plantas de tratamiento de aguas residuales y potables. Garantizamos continuidad operativa y cumplimiento ambiental.</p>
+          <h3 class="featured-plantas-heading" id="plantas-card-titulo">Tratamiento de Aguas · Plantas PTAR y PTAP</h3>
+          <p class="featured-plantas-tagline">Operación técnica de plantas especializadas</p>
+          <p class="featured-plantas-intro">Garantizamos continuidad operativa y cumplimiento de estándares sanitarios y ambientales nacionales en cada intervención.</p>
           <div class="featured-water-grid">
-            <div>
-              <div style="font-family:var(--heading);font-size:0.7rem;color:var(--gold-light);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">Aguas Residuales</div>
+            <div class="featured-water-panel">
+              <h4 class="featured-water-panel__title">PTAR — Aguas Residuales</h4>
+              <p class="featured-water-panel__subtitle">Planta de Tratamiento de Aguas Residuales</p>
               <ul class="service-list">
-                <li>Reactores biológicos</li>
+                <li>Operación técnica de PTAR</li>
+                <li>Limpieza de reactores biológicos</li>
+                <li>Mantenimiento de sopladores</li>
                 <li>Control de aireación</li>
-                <li>Manejo de lodos</li>
+                <li>Retiro y disposición de lodos</li>
                 <li>Bombas sumergibles</li>
+                <li>Ajuste de parámetros fisicoquímicos</li>
+                <li>Optimización de eficiencia del sistema</li>
+                <li>Cumplimiento normativo ambiental</li>
               </ul>
             </div>
-            <div>
-              <div style="font-family: var(--heading); font-size: 0.7rem; color: var(--gold-light); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem;">Agua Potable</div>
-              <ul class="service-list" style="">
-                <li style="">Sedimentadores</li>
-                <li style="">Filtros multimedia</li>
-                <li style="">Sistemas de cloración</li>
-                <li>Control de calidad</li>
+            <div class="featured-water-panel">
+              <h4 class="featured-water-panel__title">PTAP — Agua Potable</h4>
+              <p class="featured-water-panel__subtitle">Planta de Tratamiento de Agua Potable</p>
+              <ul class="service-list">
+                <li>Limpieza de sedimentadores</li>
+                <li>Mantenimiento de filtros multimedia</li>
+                <li>Sistemas de cloración</li>
+                <li>Bombas dosificadoras</li>
+                <li>Redes hidráulicas</li>
+                <li>Tanques de almacenamiento</li>
+                <li>Sistemas de bombeo</li>
+                <li>Control de calidad del agua</li>
+                <li>Optimización de potabilización</li>
               </ul>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AIRPORT SECTION -->
-<section id="aeroportuario" class="airport">
-  <div class="airport-bg" style=""></div>
-  <div class="airport-inner" style="">
-    <div class="airport-content">
-      <div class="section-header">
-        <div class="section-label">Sector Aeroportuario</div>
-        <h2 class="section-title reveal">Operaciones en aeropuertos AIRPLAN</h2>
-        <p class="section-desc reveal">Trabajamos bajo procedimientos alineados con estándares de seguridad operacional aeroportuaria, garantizando soporte técnico especializado en operación continua.</p>
-      </div>
-      <div class="airplan-badge reveal">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
-        Aeropuertos operados por AIRPLAN
-      </div>
-      <div class="airport-services reveal">
-        <div class="airport-item">Mantenimiento civil de infraestructura</div>
-        <div class="airport-item">Sistemas hidrosanitarios</div>
-        <div class="airport-item">Redes eléctricas</div>
-        <div class="airport-item">Sistemas HVAC</div>
-        <div class="airport-item">Plantas PTAR</div>
-        <div class="airport-item">Plantas de potabilización</div>
-        <div class="airport-item">Evacuación de lodos</div>
-        <div class="airport-item">Zonas verdes aeroportuarias</div>
-      </div>
-    </div>
-    <div class="airport-visual reveal">
-      <div class="airport-img-wrap" style="">
-        <img src="https://i.ibb.co/hF0BV4TC/mantenimiento-aereoportuario2.jpg" alt="Infraestructura aeroportuaria" width="1200" height="900" decoding="async" loading="lazy">
-        <div class="airport-accent"></div>
-        <div class="airport-accent2"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HVAC + COLD -->
-<section id="hvac" class="hvac-cold" style="">
-  <div class="hvac-cold-inner" style="">
-    <div class="section-header reveal" style="">
-      <div class="section-label">Climatización &amp; Refrigeración</div>
-      <h2 class="section-title" style="">Confort térmico a escala industrial</h2>
-    </div>
-    <div class="two-col-cards">
-      <div class="big-card reveal">
-        <div class="big-card-header">
-          <div class="section-label">HVAC Industrial</div>
-          <h3>Sistemas de Aire Acondicionado</h3>
-        </div>
-        <div class="big-card-body">
-          <p>Aliados estratégicos de constructoras de la Costa Norte Colombiana. Diseño, suministro e instalación certificada de sistemas para todos los sectores.</p>
-          <div style="margin-bottom:1rem;">
-            <div style="font-size:0.8rem;color:#778090;text-transform:uppercase;letter-spacing:0.1em;font-family:var(--heading);margin-bottom:0.6rem;">Marcas Industriales</div>
-            <div class="tag-cloud">
-              <span class="tag">Carrier</span>
-              <span class="tag">York</span>
-              <span class="tag">Mitsubishi Electric</span>
-              <span class="tag">Goodman</span>
-              <span class="tag">Frigidaire</span>
-            </div>
-          </div>
-          <div style="font-size:0.8rem;color:#778090;text-transform:uppercase;letter-spacing:0.1em;font-family:var(--heading);margin-bottom:0.6rem;">Capacidades Residenciales</div>
-          <div class="tag-cloud">
-            <span class="tag">9.000 BTU</span>
-            <span class="tag">12.000 BTU</span>
-            <span class="tag">18.000 BTU</span>
-            <span class="tag">24.000 BTU</span>
-            <span class="tag">32.000 BTU</span>
-          </div>
-        </div>
-      </div>
-      <div class="big-card reveal reveal-delay-2">
-        <div class="big-card-header" style="">
-          <div class="section-label" style="">Refrigeración Industrial</div>
-          <h3 style="">Cuartos Fríos &amp; Cadena de Frío</h3>
-        </div>
-        <div class="big-card-body" style="">
-          <p style="">Diseño e instalación de cuartos fríos industriales bajo normativa INVIMA. Clientes principales: frigoríficos y empresas alimentarias de la Costa Norte Colombiana.</p>
-          <ul class="mini-list" style="">
-            <li>Ingeniería térmica y selección de equipos</li>
-            <li>Panelería aislante de alta eficiencia</li>
-            <li style="">Sistemas de refrigeración industriales</li>
-            <li>Automatización y control de temperatura</li>
-            <li style="">Cuartos de congelación y conservación</li>
-            <li style="">Túneles de enfriamiento rápido</li>
-          </ul>
-          <div style="margin-top: 1.5rem; padding: 1rem 1.25rem; background: rgba(27,58,138,0.06); border-left: 3px solid var(--blue); border-radius: 2px;">
-            <p style="margin: 0px; font-size: 0.85rem; color: #556070;">Cumplimiento estricto de normativa <strong style="color:var(--blue);">INVIMA</strong> para industria alimentaria y farmacéutica.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WATER TREATMENT -->
-<section id="aguas" class="water">
-  <div class="water-bg" style=""></div>
-  <div class="water-inner" style="">
-    <div class="section-header reveal" style="">
-      <div class="section-label" style="">Tratamiento de Aguas</div>
-      <h2 class="section-title" style="">Operación técnica de plantas especializadas</h2>
-      <p class="section-desc" style="">Garantizamos continuidad operativa y cumplimiento de estándares sanitarios y ambientales nacionales en cada intervención.</p>
-    </div>
-    <div class="water-tabs">
-      <div class="water-tab-card reveal">
-        <h3>PTAR — Aguas Residuales</h3>
-        <div class="sub">Planta de Tratamiento de Aguas Residuales</div>
-        <ul class="service-list">
-          <li>Operación técnica de PTAR</li>
-          <li>Limpieza de reactores biológicos</li>
-          <li>Mantenimiento de sopladores</li>
-          <li>Control de aireación</li>
-          <li>Retiro y disposición de lodos</li>
-          <li>Bombas sumergibles</li>
-          <li>Ajuste de parámetros fisicoquímicos</li>
-          <li>Optimización de eficiencia del sistema</li>
-          <li>Cumplimiento normativo ambiental</li>
-        </ul>
-      </div>
-      <div class="water-tab-card reveal reveal-delay-2" style="">
-        <h3 style="">PTAP — Agua Potable</h3>
-        <div class="sub" style="">Planta de Tratamiento de Agua Potable</div>
-        <ul class="service-list" style="">
-          <li style="">Limpieza de sedimentadores</li>
-          <li>Mantenimiento de filtros multimedia</li>
-          <li>Sistemas de cloración</li>
-          <li style="">Bombas dosificadoras</li>
-          <li style="">Redes hidráulicas</li>
-          <li style="">Tanques de almacenamiento</li>
-          <li style="">Sistemas de bombeo</li>
-          <li style="">Control de calidad del agua</li>
-          <li style="">Optimización de potabilización</li>
-        </ul>
       </div>
     </div>
   </div>
@@ -1017,6 +938,7 @@ footer {
 <!-- RCM -->
 <section id="rcm" class="rcm" style="">
   <div class="rcm-inner" style="">
+    <p class="rcm-intro-banner reveal">En Ingeniar AJ su mantenimiento lo planeamos así:</p>
     <div class="section-header reveal" style="max-width:none;text-align:left;margin-bottom:0;">
       <div class="section-label" style="">Metodología Operativa</div>
       <h2 class="section-title" style="">Mantenimiento Centrado en Confiabilidad</h2>
@@ -1066,7 +988,7 @@ footer {
           </div>
         </div>
         <div style="background: rgba(192,39,45,0.05); border: 1px solid rgba(192,39,45,0.2); border-radius: 4px; padding: 1.75rem 2rem;" class="reveal reveal-delay-3">
-          <div style="font-family: var(--heading); font-size: 0.85rem; font-weight: 600; color: var(--red); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.08em;">Laboratorio Propio</div>
+          <p style="font-family: var(--heading); font-size: 0.95rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.65rem; line-height: 1.35; letter-spacing: 0.02em;">Contamos con laboratorio de materiales para pruebas de calidad</p>
           <p style="font-size: 0.88rem; color: #667080; line-height: 1.6;">Evaluación de materiales, verificación de compatibilidad técnica, control de calidad en obra y ensayos de desempeño. Confiabilidad garantizada en cada intervención.</p>
         </div>
       </div>
@@ -1130,14 +1052,37 @@ footer {
   </div>
 </section>
 
+<!-- SEDES -->
+<section id="sedes" class="sedes">
+  <div class="sedes-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Presencia</div>
+      <h2 class="section-title">Sedes</h2>
+      <p class="section-desc">Puntos de operación en la Costa Norte y el interior del país.</p>
+    </div>
+    <div class="sedes-grid">
+      <article class="sede-card reveal">
+        <div class="sede-city">Montería · Córdoba</div>
+        <p class="sede-address">Bodega 013, San Jerónimo, Montería, Córdoba.</p>
+      </article>
+      <article class="sede-card reveal reveal-delay-1">
+        <div class="sede-city">Corozal · Sucre</div>
+        <p class="sede-address">Carretera Troncal de Occidente km 13, Zona Industrial Corozal, local 1211, Corozal, Sucre.</p>
+      </article>
+      <article class="sede-card reveal reveal-delay-2">
+        <div class="sede-city">Cartagena · Bolívar</div>
+        <p class="sede-address">Sector Industrial Mamonal km 5, sector Arroz Barato, Cartagena, Bolívar.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
-<section id="contacto" class="cta-section" style="">
-  <div class="section-label reveal" style="">¿Listo para trabajar juntos?</div>
-  <h2 class="cta-title reveal" style="">Su proyecto merece el mejor mantenimiento.</h2>
-  <p class="cta-desc reveal" style="">Contacte a nuestro equipo técnico y reciba una propuesta personalizada basada en las necesidades reales de su operación.</p>
-  <div class="cta-actions reveal" style="">
+<section id="contacto" class="cta-section">
+  <h2 class="cta-title cta-title--kick reveal">¿LISTO PARA TRABAJAR JUNTOS?</h2>
+  <div class="cta-actions reveal">
     <a href="mailto:contacto@ingeniaraj.com" class="btn-primary">Solicitar propuesta técnica</a>
-    <a href="tel:+573000000000" class="btn-outline" style="">Contactar ahora</a>
+    <a href="tel:+573000000000" class="btn-outline">Contactar ahora</a>
   </div>
 </section>
 
