@@ -19,6 +19,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="preconnect" href="https://i.ibb.co" crossorigin="">
+<link rel="preload" as="image" href="assets/hero-aeropuerto.png" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-hvac.png" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&amp;display=swap" rel="stylesheet">
 <style>
 :root {
@@ -44,8 +47,9 @@ body { font-family: var(--body); color: var(--text); background: var(--charcoal)
 /* CUSTOMIZED_BY_CURSOR: nav-white + logo + mobile-menu */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 78px;
-  padding: 0 1.25rem;
+  min-height: 92px;
+  height: auto;
+  padding: 0.35rem 1.25rem;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -57,7 +61,10 @@ nav {
 }
 /* Logo */
 .nav-brand { display: flex; align-items: center; }
-.nav-logo-img { width: 78px; height: 78px; object-fit: contain; display: block; }
+.nav-logo-img {
+  width: 100px; height: 100px; object-fit: contain; display: block;
+  filter: drop-shadow(0 2px 8px rgba(26,39,68,0.12));
+}
 /* Menu */
 .nav-menu {
   display: flex; align-items: center; justify-content: center;
@@ -144,14 +151,39 @@ nav {
 .hero::before{
   content:'';
   position:absolute; inset:0;
-  background: rgba(0,0,0,0.38);
+  background:
+    radial-gradient(ellipse 95% 85% at 50% 42%, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.55) 100%),
+    rgba(0,0,0,0.34);
   z-index: 1;
 }
-.hero-img {
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  opacity: 1;
+.hero-split {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
+.hero-pane {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  isolation: isolate;
+}
+.hero-pane-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  image-rendering: auto;
+}
+.hero-pane--left .hero-pane-img { object-position: center 42%; }
+.hero-pane--right .hero-pane-img { object-position: center 45%; }
+.hero-pane--right { border-left: 1px solid rgba(255,255,255,0.18); }
 .hero-content {
   position: relative; z-index: 2;
   text-align: center;
@@ -171,11 +203,6 @@ nav {
   text-shadow: 0 10px 30px rgba(0,0,0,0.55);
 }
 
-/* SERVICES SECTION */
-.services {
-  background: var(--white);
-  padding: 7rem 2rem;
-}
 .section-header {
   text-align: center; max-width: 700px; margin: 0 auto 5rem;
 }
@@ -191,6 +218,11 @@ nav {
 }
 .section-desc { font-size: 1.05rem; color: #667080; line-height: 1.7; }
 
+/* SERVICES SECTION */
+.services {
+  background: var(--white);
+  padding: 7rem 2rem;
+}
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -213,16 +245,63 @@ nav {
 }
 .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(192,39,45,0.1); }
 .service-card:hover::before { transform: scaleX(1); }
+/* Fondo distinto por servicio numerado (01–04) */
+.services-grid > .service-card:nth-child(1) { background: #E8EDF6; }
+.services-grid > .service-card:nth-child(2) { background: #F8F1E6; }
+.services-grid > .service-card:nth-child(3) { background: #E8F4F1; }
 .service-card.featured {
   background: var(--blue);
   grid-column: span 2;
 }
-.service-icon {
-  width: 96px; height: 96px; margin-bottom: 1.25rem;
-  display: flex; align-items: center; justify-content: center;
+.service-card.featured .featured-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 2rem 2.75rem;
+  align-items: start;
 }
-.service-icon img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4px; }
-.service-card.featured .service-icon img { box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+.service-card.featured .featured-media .service-num { margin-bottom: 1rem; }
+.service-card.featured .featured-media .service-icon {
+  max-width: none;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 0;
+}
+.service-card.featured .featured-main h3 { margin-top: 0; }
+.service-card.featured .featured-water-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem 2rem;
+  margin-top: 1.25rem;
+  max-width: 100%;
+}
+.service-icon {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 1.35rem;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(27,58,138,0.08);
+  box-shadow:
+    0 12px 36px rgba(27,58,138,0.10),
+    0 4px 12px rgba(0,0,0,0.06);
+  background: var(--gray-light);
+}
+.service-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-card:hover .service-icon img { transform: scale(1.04); }
+.service-card.featured .service-icon {
+  border-color: rgba(255,255,255,0.12);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.28), 0 4px 14px rgba(0,0,0,0.2);
+}
+.service-card.featured .service-icon img { box-shadow: none; }
 .service-num {
   font-family: var(--heading); font-size: 0.65rem; letter-spacing: 0.2em;
   color: var(--red); text-transform: uppercase; margin-bottom: 0.75rem;
@@ -300,10 +379,23 @@ nav {
 .airport-visual { position: relative; }
 .airport-img-wrap {
   position: relative;
-  aspect-ratio: 4/3; border-radius: 4px; overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3);
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    0 24px 70px rgba(0,0,0,0.45),
+    0 8px 24px rgba(0,0,0,0.28),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
 }
-.airport-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.airport-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.airport-img-wrap:hover img { transform: scale(1.03); }
 .airport-accent {
   position: absolute; bottom: -1.5rem; right: -1.5rem;
   width: 120px; height: 120px;
@@ -591,10 +683,28 @@ footer {
   .nav-social { display: none; }
   .nav-hamburger { display: flex; }
   .nav-mobile { display: block; }
-  .nav-logo-img { width: 64px; height: 64px; }
+  nav { min-height: 72px; }
+  .nav-logo-img { width: 76px; height: 76px; }
   .hero-stats { gap: 1.5rem; }
+  .hero-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .hero-pane--right { border-left: none; border-top: 1px solid rgba(255,255,255,0.18); }
   .services-grid { grid-template-columns: 1fr; }
   .service-card.featured { grid-column: span 1; }
+  .service-card.featured .featured-layout {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .service-card.featured .featured-media .service-icon {
+    aspect-ratio: 16 / 10;
+    max-width: none;
+  }
+  .service-card.featured .featured-water-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
   .airport-inner { grid-template-columns: 1fr; gap: 3rem; }
   .airport-visual { display: none; }
   .two-col-cards, .water-tabs, .rcm-layout, .two-panels { grid-template-columns: 1fr; gap: 2rem; }
@@ -607,6 +717,8 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  .service-card:hover .service-icon img,
+  .airport-img-wrap:hover img { transform: none !important; }
 }
 </style>
 <style id="htmlpub-breakpoint-visibility">@media (max-width: 390px) { .hp-hide-mobile { display: none !important; } }
@@ -617,7 +729,7 @@ footer {
 <nav>
   <!-- LOGO -->
   <div class="nav-brand">
-    <img class="nav-logo-img" src="https://i.ibb.co/v4hhs5m4/logoingeniar.png" alt="INGENIAR AJ">
+    <img class="nav-logo-img" src="https://i.ibb.co/v4hhs5m4/logoingeniar.png" alt="INGENIAR AJ" width="100" height="100" decoding="async">
   </div>
 
   <!-- MENÚ CENTRO -->
@@ -664,26 +776,27 @@ footer {
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO: mitad aeropuerto / mitad HVAC -->
 <section class="hero">
-  <div class="hero-img" id="hero-img" style="background-image:url('https://i.ibb.co/35xH0vb9/mantenimiento-aereoportuario.jpg');"></div>
+  <div class="hero-split">
+    <div class="hero-pane hero-pane--left">
+      <img class="hero-pane-img" src="assets/hero-aeropuerto.png" width="1024" height="709" sizes="(max-width: 768px) 100vw, 50vw" decoding="async" fetchpriority="high" alt="">
+    </div>
+    <div class="hero-pane hero-pane--right">
+      <img class="hero-pane-img" src="assets/hero-hvac.png" width="1024" height="580" sizes="(max-width: 768px) 100vw, 50vw" decoding="async" fetchpriority="high" alt="">
+    </div>
+  </div>
   <div class="hero-content">
-    <div class="hero-title">Ingeniar AJ - Gestión<br>Integral de Mantenimiento</div>
+    <div class="hero-title">Ingeniar AJ — Gestión integral<br>de mantenimiento</div>
   </div>
 </section>
 
-<!-- SERVICES OVERVIEW -->
 <section id="servicios" class="services" style="">
-  <div class="section-header reveal" style="">
-    <div class="section-label" style="">Nuestros Servicios</div>
-    <h2 class="section-title" style="">Soluciones técnicas para cada industria</h2>
-    <p class="section-desc" style="">Operamos bajo estándares técnicos exigentes con metodologías modernas de mantenimiento centradas en la confiabilidad operacional.</p>
-  </div>
   <div class="services-grid" style="">
     <div class="service-card reveal">
       <div class="service-num">01 / Aeroportuario</div>
       <div class="service-icon">
-        <img src="https://i.ibb.co/hF0BV4TC/mantenimiento-aereoportuario2.jpg" alt="Mantenimiento Aeroportuario">
+        <img src="https://i.ibb.co/hF0BV4TC/mantenimiento-aereoportuario2.jpg" alt="Mantenimiento Aeroportuario" width="800" height="500" decoding="async" loading="lazy">
       </div>
       <h3>Mantenimiento Aeroportuario</h3>
       <p>Experiencia, acreditaciones y protocolos de seguridad operacional para intervenir infraestructura aeroportuaria en Colombia.</p>
@@ -699,7 +812,7 @@ footer {
     <div class="service-card reveal reveal-delay-1" style="">
       <div class="service-num" style="">02 / HVAC</div>
       <div class="service-icon">
-        <img src="https://i.ibb.co/F4h81KxT/mantemientoaireindustriales.jpg" alt="Sistemas de Aire Acondicionado">
+        <img src="https://i.ibb.co/F4h81KxT/mantemientoaireindustriales.jpg" alt="Sistemas de Aire Acondicionado" width="800" height="500" decoding="async" loading="lazy">
       </div>
       <h3 style="">Sistemas de Aire Acondicionado</h3>
       <p style="">Distribuidores e instaladores de sistemas HVAC industriales, institucionales y residenciales. Marcas líderes del mercado.</p>
@@ -714,7 +827,7 @@ footer {
     <div class="service-card reveal reveal-delay-2" style="">
       <div class="service-num" style="">03 / Refrigeración</div>
       <div class="service-icon">
-        <img src="https://i.ibb.co/jPdhYcHq/cuartofrio.jpg" alt="Cuartos Fríos Industriales">
+        <img src="https://i.ibb.co/jPdhYcHq/cuartofrio.jpg" alt="Cuartos Fríos Industriales" width="800" height="500" decoding="async" loading="lazy">
       </div>
       <h3 style="">Cuartos Fríos Industriales</h3>
       <p style="">Diseño, fabricación e instalación de cuartos fríos cumpliendo normativa INVIMA para frigoríficos y empresas alimentarias.</p>
@@ -727,30 +840,36 @@ footer {
       </ul>
     </div>
     <div class="service-card featured reveal reveal-delay-3" style="">
-      <div class="service-num" style="color: var(--gold-light);">04 &amp; 05 / Tratamiento de Aguas</div>
-      <div class="service-icon">
-        <img src="https://i.ibb.co/MD4K9FfN/agua.jpg" alt="PTAR y PTAP — Operación Técnica">
-      </div>
-      <h3 style="">PTAR &amp; PTAP — Operación Técnica</h3>
-      <p style="">Servicios especializados para plantas de tratamiento de aguas residuales y potables. Garantizamos continuidad operativa y cumplimiento ambiental.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem;">
-        <div>
-          <div style="font-family:var(--heading);font-size:0.7rem;color:var(--gold-light);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">Aguas Residuales</div>
-          <ul class="service-list">
-            <li>Reactores biológicos</li>
-            <li>Control de aireación</li>
-            <li>Manejo de lodos</li>
-            <li>Bombas sumergibles</li>
-          </ul>
+      <div class="featured-layout">
+        <div class="featured-media">
+          <div class="service-num" style="color: var(--gold-light);">04 &amp; 05 / Tratamiento de Aguas</div>
+          <div class="service-icon">
+            <img src="https://i.ibb.co/MD4K9FfN/agua.jpg" alt="PTAR y PTAP — Operación Técnica" width="800" height="500" decoding="async" loading="lazy">
+          </div>
         </div>
-        <div style="">
-          <div style="font-family: var(--heading); font-size: 0.7rem; color: var(--gold-light); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem;">Agua Potable</div>
-          <ul class="service-list" style="">
-            <li style="">Sedimentadores</li>
-            <li style="">Filtros multimedia</li>
-            <li style="">Sistemas de cloración</li>
-            <li>Control de calidad</li>
-          </ul>
+        <div class="featured-main">
+          <h3 style="">PTAR &amp; PTAP — Operación Técnica</h3>
+          <p style="">Servicios especializados para plantas de tratamiento de aguas residuales y potables. Garantizamos continuidad operativa y cumplimiento ambiental.</p>
+          <div class="featured-water-grid">
+            <div>
+              <div style="font-family:var(--heading);font-size:0.7rem;color:var(--gold-light);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">Aguas Residuales</div>
+              <ul class="service-list">
+                <li>Reactores biológicos</li>
+                <li>Control de aireación</li>
+                <li>Manejo de lodos</li>
+                <li>Bombas sumergibles</li>
+              </ul>
+            </div>
+            <div>
+              <div style="font-family: var(--heading); font-size: 0.7rem; color: var(--gold-light); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem;">Agua Potable</div>
+              <ul class="service-list" style="">
+                <li style="">Sedimentadores</li>
+                <li style="">Filtros multimedia</li>
+                <li style="">Sistemas de cloración</li>
+                <li>Control de calidad</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -784,7 +903,7 @@ footer {
     </div>
     <div class="airport-visual reveal">
       <div class="airport-img-wrap" style="">
-        <img src="https://i.ibb.co/hF0BV4TC/mantenimiento-aereoportuario2.jpg" alt="Infraestructura aeroportuaria" style="">
+        <img src="https://i.ibb.co/hF0BV4TC/mantenimiento-aereoportuario2.jpg" alt="Infraestructura aeroportuaria" width="1200" height="900" decoding="async" loading="lazy">
         <div class="airport-accent"></div>
         <div class="airport-accent2"></div>
       </div>
