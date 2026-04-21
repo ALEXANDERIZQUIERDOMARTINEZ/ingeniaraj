@@ -40,7 +40,7 @@
   --body: 'Source Sans 3', sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; font-size: 18px; }
 body { font-family: var(--body); color: var(--text); background: var(--charcoal); overflow-x: hidden; }
 
 /* NAV */
@@ -677,21 +677,6 @@ nav {
 }
 .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.12); }
 
-/* FOOTER */
-footer {
-  background: var(--charcoal);
-  padding: 3rem 2rem;
-  border-top: 4px solid var(--red);
-}
-.footer-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 1.5rem;
-}
-.footer-logo { font-family: var(--heading); font-size: 1.2rem; font-weight: 700; color: var(--white); }
-.footer-logo span { color: var(--gold); }
-.footer-info { font-size: 0.8rem; color: var(--gray-mid); line-height: 1.6; }
-.footer-copy { font-size: 0.75rem; color: rgba(138,154,181,0.5); }
 
 /* ANIMATIONS */
 @keyframes fadeUp {
@@ -738,8 +723,7 @@ footer {
   .rcm-layout, .two-panels { grid-template-columns: 1fr; gap: 2rem; }
   .deliverable-grid { grid-template-columns: 1fr; }
   .role-grid { grid-template-columns: 1fr; }
-  .footer-inner { flex-direction: column; text-align: center; }
-  .rcm-layout { grid-template-columns: 1fr; }
+.rcm-layout { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1086,20 +1070,6 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="">
-  <div class="footer-inner" style="">
-    <div>
-      <div class="footer-logo">INGENIAR <span>AJ</span> S.A.S.</div>
-      <div class="footer-info" style="margin-top:0.4rem;">Colombia · Mantenimiento Industrial Especializado</div>
-    </div>
-    <div class="footer-info" style="text-align:center;">
-      Aeroportuario · HVAC · Cuartos Fríos<br>
-      PTAR · PTAP · Zonas Verdes · RCM
-    </div>
-    <div class="footer-copy">© 2024 INGENIAR AJ S.A.S. Todos los derechos reservados.</div>
-  </div>
-</footer>
 
 <script>
 const observer = new IntersectionObserver((entries) => {
