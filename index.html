@@ -750,7 +750,6 @@ nav {
 .pdf-btn.loading { opacity: 0.65; pointer-events: none; cursor: wait; }
 @media print { .pdf-btn { display: none !important; } }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
 </head>
 <body>
 
@@ -1358,16 +1357,12 @@ submitData(container,data);
   if(!btn) return;
   var savedHTML = btn.innerHTML;
 
-  btn.addEventListener('click', function(){
-    if(typeof html2pdf === 'undefined') return;
+  function doPDF(){
     var nav = document.querySelector('nav');
     var reveals = document.querySelectorAll('.reveal');
-
-    btn.classList.add('loading');
-    btn.innerHTML = 'Generando&hellip;';
+    reveals.forEach(function(el){ el.classList.add('visible'); });
     if(nav) nav.style.visibility = 'hidden';
     btn.style.visibility = 'hidden';
-    reveals.forEach(function(el){ el.classList.add('visible'); });
 
     html2pdf().set({
       margin: 0,
@@ -1380,7 +1375,33 @@ submitData(container,data);
       btn.style.visibility = '';
       btn.classList.remove('loading');
       btn.innerHTML = savedHTML;
+    }).catch(function(){
+      if(nav) nav.style.visibility = '';
+      btn.style.visibility = '';
+      btn.classList.remove('loading');
+      btn.innerHTML = savedHTML;
+      window.print();
     });
+  }
+
+  btn.addEventListener('click', function(){
+    btn.classList.add('loading');
+    btn.innerHTML = 'Generando&hellip;';
+
+    if(typeof html2pdf !== 'undefined'){
+      doPDF();
+      return;
+    }
+
+    var s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+    s.onload = doPDF;
+    s.onerror = function(){
+      btn.classList.remove('loading');
+      btn.innerHTML = savedHTML;
+      window.print();
+    };
+    document.head.appendChild(s);
   });
 })();
 </script>
